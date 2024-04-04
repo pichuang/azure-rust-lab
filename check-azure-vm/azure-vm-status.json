@@ -1,0 +1,119 @@
+{
+    "name": "vm-core-taiwannorth",
+    "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/rg-hub-er-taiwannorth/providers/Microsoft.Compute/virtualMachines/vm-core-taiwannorth",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "taiwannorth",
+    "properties": {
+      "hardwareProfile": {
+        "vmSize": "Standard_D4ds_v5"
+      },
+      "provisioningState": "Succeeded",
+      "vmId": "433b9949-f3b4-42b4-9b8a-ec03172b0899",
+      "additionalCapabilities": {
+        "hibernationEnabled": false
+      },
+      "storageProfile": {
+        "imageReference": {
+          "publisher": "canonical",
+          "offer": "0001-com-ubuntu-server-jammy",
+          "sku": "22_04-lts-gen2",
+          "version": "latest",
+          "exactVersion": "22.04.202403280"
+        },
+        "osDisk": {
+          "osType": "Linux",
+          "name": "vm-core-taiwannorth_OsDisk_1_7bcfc12f3e7e4ba8b83cb530831d037d",
+          "createOption": "FromImage",
+          "caching": "ReadWrite",
+          "managedDisk": {
+            "storageAccountType": "Premium_LRS",
+            "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/rg-hub-er-taiwannorth/providers/Microsoft.Compute/disks/vm-core-taiwannorth_OsDisk_1_7bcfc12f3e7e4ba8b83cb530831d037d"
+          },
+          "deleteOption": "Delete",
+          "diskSizeGB": 30
+        },
+        "dataDisks": [],
+        "diskControllerType": "SCSI"
+      },
+      "osProfile": {
+        "computerName": "vm-core-taiwannorth",
+        "adminUsername": "pichuang",
+        "linuxConfiguration": {
+          "disablePasswordAuthentication": true,
+          "ssh": {
+            "publicKeys": [
+              {
+                "path": "/home/pichuang/.ssh/authorized_keys",
+                "keyData": "ssh-rsa ?? pinhuang.poc@microsoft.com"
+              }
+            ]
+          },
+          "provisionVMAgent": true,
+          "patchSettings": {
+            "patchMode": "AutomaticByPlatform",
+            "automaticByPlatformSettings": {
+              "rebootSetting": "IfRequired",
+              "bypassPlatformSafetyChecksOnUserSchedule": false
+            },
+            "assessmentMode": "ImageDefault"
+          },
+          "enableVMAgentPlatformUpdates": false
+        },
+        "secrets": [],
+        "allowExtensionOperations": true,
+        "requireGuestProvisionSignal": true
+      },
+      "networkProfile": {"networkInterfaces":[{"id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/rg-hub-er-taiwannorth/providers/Microsoft.Network/networkInterfaces/vm-core-taiwannorth654","properties":{"deleteOption":"Delete"}}]},
+      "diagnosticsProfile": {
+        "bootDiagnostics": {
+          "enabled": true
+        }
+      },
+      "timeCreated": "2024-03-28T13:05:35.7367577+00:00"
+    },
+    "resources": [
+      {
+        "name": "AzureNetworkWatcherExtension",
+        "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/rg-hub-er-taiwannorth/providers/Microsoft.Compute/virtualMachines/vm-core-taiwannorth/extensions/AzureNetworkWatcherExtension",
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "location": "taiwannorth",
+        "properties": {
+          "autoUpgradeMinorVersion": true,
+          "provisioningState": "Succeeded",
+          "publisher": "Microsoft.Azure.NetworkWatcher",
+          "type": "NetworkWatcherAgentLinux",
+          "typeHandlerVersion": "1.4",
+          "settings": {}
+        }
+      },
+      {
+        "name": "AzurePerformanceDiagnosticsLinux",
+        "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/rg-hub-er-taiwannorth/providers/Microsoft.Compute/virtualMachines/vm-core-taiwannorth/extensions/AzurePerformanceDiagnosticsLinux",
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "location": "taiwannorth",
+        "properties": {
+          "autoUpgradeMinorVersion": true,
+          "provisioningState": "Succeeded",
+          "publisher": "Microsoft.Azure.Performance.Diagnostics",
+          "type": "AzurePerformanceDiagnosticsLinux",
+          "typeHandlerVersion": "1.1",
+          "settings": {"performanceScenario":"vmslow","traceDurationInSeconds":300,"srNumber":"","requestTimeUtc":"Thu, 28 Mar 2024 16:44:35 GMT","configurations":{"InstallOnly":"false","Symptoms":"","UserAgreedToShareData":"true"},"resourceId":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/rg-hub-er-taiwannorth/providers/Microsoft.Compute/virtualMachines/vm-core-taiwannorth","storageAccountName":"rghubertaiwannorth393"}
+        }
+      },
+      {
+        "name": "MDE.Linux",
+        "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/rg-hub-er-taiwannorth/providers/Microsoft.Compute/virtualMachines/vm-core-taiwannorth/extensions/MDE.Linux",
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "location": "taiwannorth",
+        "properties": {
+          "autoUpgradeMinorVersion": true,
+          "forceUpdateTag": "2969e692-376c-411b-914f-851aeee68285",
+          "provisioningState": "Succeeded",
+          "publisher": "Microsoft.Azure.AzureDefenderForServers",
+          "type": "MDE.Linux",
+          "typeHandlerVersion": "1.0",
+          "settings": {"azureResourceId":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/RG-HUB-ER-TAIWANNORTH/providers/Microsoft.Compute/virtualMachines/vm-core-taiwannorth","forceReOnboarding":false,"vNextEnabled":false,"autoUpdate":true}
+        }
+      }
+    ]
+  }
