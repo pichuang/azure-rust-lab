@@ -1,272 +1,327 @@
 $ cargo run
-    Finished dev [unoptimized + debuginfo] target(s) in 0.21s
+    Finished dev [unoptimized + debuginfo] target(s) in 0.64s
      Running `target/debug/lab-azure-create-1-vm`
-[2024-05-01T10:16:42Z TRACE azure_identity::token_credentials::azure_cli_credentials] fetching credential via Azure CLI: az account get-access-token --output json
-[2024-05-01T10:16:42Z TRACE tracing::span] async_io::main_loop;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> async_io::main_loop;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] new kqueue_fd=8
-[2024-05-01T10:16:42Z TRACE async_io::driver] waiting on I/O
-[2024-05-01T10:16:42Z TRACE tracing::span] react;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> react;
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE polling] Poller::wait; timeout=None
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 6 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 1, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 2, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] async_io::block_on;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> async_io::block_on;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 1, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 6 } ev=Event { key: 0, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleep until notification
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 2, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- Poller::wait;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 1 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- react;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- react;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 50 us
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 1, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE async_io::driver] waiting on I/O
-[2024-05-01T10:16:42Z TRACE tracing::span] react;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> react;
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE polling] Poller::wait; timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] new events kqueue_fd=8 res=2
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- Poller::wait;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 2 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- react;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- react;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 50 us
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE async_io::driver] waiting on I/O
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] react;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> react;
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE polling] Poller::wait; timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- Poller::wait;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 1 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- react;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- react;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 50 us
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 6 } ev=Event { key: 0, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE async_io::driver] waiting on I/O
-[2024-05-01T10:16:42Z TRACE tracing::span] react;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> react;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 75 us
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE polling] Poller::wait; timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::wait;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 100 us
-[2024-05-01T10:16:42Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> wait;
-[2024-05-01T10:16:42Z DEBUG azure_core::http_client::reqwest] instantiating an http client using the reqwest backend
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 250 us
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 500 us
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 750 us
-[2024-05-01T10:16:42Z TRACE azure_identity::token_credentials::cache] falling back to callback
-[2024-05-01T10:16:42Z TRACE azure_identity::token_credentials::azure_cli_credentials] fetching credential via Azure CLI: az account get-access-token --output json --scope https://management.azure.com/.default
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 2, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 1, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 2, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 1, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 1000 us
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 2500 us
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 5000 us
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 10000 us
-[2024-05-01T10:16:42Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- Poller::wait;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 1 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- react;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- react;
-[2024-05-01T10:16:42Z TRACE async_io::driver] stops hogging the reactor
-[2024-05-01T10:16:42Z TRACE async_io::driver] waiting on I/O
-[2024-05-01T10:16:42Z TRACE tracing::span] react;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 2, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> react;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE polling] Poller::wait; timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] new events kqueue_fd=8 res=2
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- Poller::wait;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 2 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- react;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- react;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 50 us
-[2024-05-01T10:16:42Z TRACE async_io::driver] notified
-[2024-05-01T10:16:42Z TRACE async_io::driver] waiting on I/O
-[2024-05-01T10:16:42Z TRACE tracing::span] react;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> react;
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE polling] Poller::wait; timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 1 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span] Poller::notify;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::notify;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 6 } ev=Event { key: 0, readable: true, writable: false, extra: EventExtra }
-[2024-05-01T10:16:42Z TRACE polling::kqueue] notify; kqueue_fd=8
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> notify;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> add;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- notify;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- notify;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- Poller::notify;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- add;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- add;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleep until notification
-[2024-05-01T10:16:42Z TRACE tracing::span] -- Poller::notify;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- react;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- react;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 50 us
-[2024-05-01T10:16:42Z TRACE async_io::driver] waiting on I/O
-[2024-05-01T10:16:42Z TRACE tracing::span] react;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> react;
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE polling] Poller::wait; timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- wait;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- Poller::wait;
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- react;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- react;
-[2024-05-01T10:16:42Z TRACE async_io::driver] sleeping for 50 us
-[2024-05-01T10:16:42Z TRACE async_io::driver] waiting on I/O
-[2024-05-01T10:16:42Z TRACE tracing::span] react;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> react;
-[2024-05-01T10:16:42Z TRACE tracing::span] process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> process_timers;
-[2024-05-01T10:16:42Z TRACE async_io::reactor] 0 ready wakers
-[2024-05-01T10:16:42Z TRACE tracing::span::active] <- process_timers;
-[2024-05-01T10:16:42Z TRACE tracing::span] -- process_timers;
-[2024-05-01T10:16:42Z TRACE polling] Poller::wait; timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> Poller::wait;
-[2024-05-01T10:16:42Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
-[2024-05-01T10:16:42Z TRACE tracing::span::active] -> wait;
-[2024-05-01T10:16:42Z DEBUG azure_core::policies::transport] the following request will be passed to the transport policy: Request {
+[2024-05-01T10:37:52Z TRACE azure_identity::token_credentials::azure_cli_credentials] fetching credential via Azure CLI: az account get-access-token --output json
+[2024-05-01T10:37:52Z TRACE polling::kqueue] new kqueue_fd=8
+[2024-05-01T10:37:52Z TRACE tracing::span] async_io::main_loop;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> async_io::main_loop;
+[2024-05-01T10:37:52Z TRACE async_io::driver] waiting on I/O
+[2024-05-01T10:37:52Z TRACE tracing::span] react;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> react;
+[2024-05-01T10:37:52Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:52Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:52Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:52Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:52Z TRACE polling] Poller::wait; timeout=None
+[2024-05-01T10:37:52Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 6 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> Poller::wait;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:52Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
+[2024-05-01T10:37:52Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> wait;
+[2024-05-01T10:37:52Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:52Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 1, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:52Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:52Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 2, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:52Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:52Z TRACE tracing::span] async_io::block_on;
+[2024-05-01T10:37:52Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 1, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> async_io::block_on;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:52Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:52Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 6 } ev=Event { key: 0, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:52Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 2, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:52Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:52Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:52Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:52Z TRACE async_io::driver] sleep until notification
+[2024-05-01T10:37:52Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- wait;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- wait;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- Poller::wait;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- Poller::wait;
+[2024-05-01T10:37:55Z TRACE async_io::reactor] 1 ready wakers
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- react;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- react;
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 50 us
+[2024-05-01T10:37:55Z TRACE async_io::driver] waiting on I/O
+[2024-05-01T10:37:55Z TRACE tracing::span] react;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> react;
+[2024-05-01T10:37:55Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 1, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:55Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:55Z TRACE polling] Poller::wait; timeout=None
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> Poller::wait;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> wait;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] new events kqueue_fd=8 res=2
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- wait;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- wait;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- Poller::wait;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- Poller::wait;
+[2024-05-01T10:37:55Z TRACE async_io::reactor] 2 ready wakers
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- react;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- react;
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 50 us
+[2024-05-01T10:37:55Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:55Z TRACE async_io::driver] waiting on I/O
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:55Z TRACE tracing::span] react;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> react;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:55Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:55Z TRACE polling] Poller::wait; timeout=None
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> Poller::wait;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> wait;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- wait;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- wait;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- Poller::wait;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- Poller::wait;
+[2024-05-01T10:37:55Z TRACE async_io::reactor] 1 ready wakers
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- react;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- react;
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 50 us
+[2024-05-01T10:37:55Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 6 } ev=Event { key: 0, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE async_io::driver] waiting on I/O
+[2024-05-01T10:37:55Z TRACE tracing::span] react;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> react;
+[2024-05-01T10:37:55Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:55Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:55Z TRACE polling] Poller::wait; timeout=None
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 75 us
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> Poller::wait;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> wait;
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 100 us
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 250 us
+[2024-05-01T10:37:55Z DEBUG azure_core::http_client::reqwest] instantiating an http client using the reqwest backend
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 500 us
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 750 us
+[2024-05-01T10:37:55Z TRACE azure_identity::token_credentials::cache] falling back to callback
+[2024-05-01T10:37:55Z TRACE azure_identity::token_credentials::azure_cli_credentials] fetching credential via Azure CLI: az account get-access-token --output json --scope https://management.azure.com/.default
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 1000 us
+[2024-05-01T10:37:55Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 2, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 1, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 2, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 1, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:55Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:55Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:55Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 2500 us
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 5000 us
+[2024-05-01T10:37:55Z TRACE async_io::driver] sleeping for 10000 us
+[2024-05-01T10:37:56Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- wait;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- wait;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- Poller::wait;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- Poller::wait;
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 1 ready wakers
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- react;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- react;
+[2024-05-01T10:37:56Z TRACE async_io::driver] stops hogging the reactor
+[2024-05-01T10:37:56Z TRACE async_io::driver] waiting on I/O
+[2024-05-01T10:37:56Z TRACE tracing::span] react;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> react;
+[2024-05-01T10:37:56Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:56Z TRACE polling] Poller::wait; timeout=None
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> Poller::wait;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> wait;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 2, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] new events kqueue_fd=8 res=2
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- wait;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- wait;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- Poller::wait;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- Poller::wait;
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 2 ready wakers
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- react;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- react;
+[2024-05-01T10:37:56Z TRACE async_io::driver] sleeping for 50 us
+[2024-05-01T10:37:56Z TRACE async_io::driver] notified
+[2024-05-01T10:37:56Z TRACE async_io::driver] waiting on I/O
+[2024-05-01T10:37:56Z TRACE tracing::span] react;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> react;
+[2024-05-01T10:37:56Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:56Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 11 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:56Z TRACE polling] Poller::wait; timeout=None
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> Poller::wait;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> wait;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- wait;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- wait;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 13 } ev=Event { key: 0, readable: false, writable: false, extra: EventExtra }
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- Poller::wait;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- Poller::wait;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 1 ready wakers
+[2024-05-01T10:37:56Z TRACE tracing::span] Poller::notify;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> Poller::notify;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] notify; kqueue_fd=8
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> notify;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- notify;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- notify;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- Poller::notify;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- Poller::notify;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] add; kqueue_fd=8 fd=BorrowedFd { fd: 6 } ev=Event { key: 0, readable: true, writable: false, extra: EventExtra }
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> add;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- react;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- react;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- add;
+[2024-05-01T10:37:56Z TRACE async_io::driver] sleeping for 50 us
+[2024-05-01T10:37:56Z TRACE tracing::span] -- add;
+[2024-05-01T10:37:56Z TRACE async_io::driver] waiting on I/O
+[2024-05-01T10:37:56Z TRACE tracing::span] react;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> react;
+[2024-05-01T10:37:56Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:56Z TRACE async_io::driver] sleeping for 75 us
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:56Z TRACE polling] Poller::wait; timeout=None
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> Poller::wait;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> wait;
+[2024-05-01T10:37:56Z TRACE async_io::driver] sleeping for 100 us
+[2024-05-01T10:37:56Z TRACE polling::kqueue] new events kqueue_fd=8 res=1
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- wait;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- wait;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- Poller::wait;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- Poller::wait;
+[2024-05-01T10:37:56Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:56Z DEBUG azure_core::policies::transport] the following request will be passed to the transport policy: Request {
+        url: Url {
+            scheme: "https",
+            cannot_be_a_base: false,
+            username: "",
+            password: None,
+            host: Some(
+                Domain(
+                    "management.azure.com",
+                ),
+            ),
+            port: None,
+            path: "//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3",
+            query: Some(
+                "api-version=2023-09-01",
+            ),
+            fragment: None,
+        },
+        method: Put,
+        headers: Headers(
+            {
+                HeaderName(
+                    "authorization",
+                ): HeaderValue(
+                    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjBjMDQxYWYtZDNlNS00MTUyLWEwMzQtZThlNDQ5YzM0YWI0LyIsImlhdCI6MTcxNDU1ODk2MiwibmJmIjoxNzE0NTU4OTYyLCJleHAiOjE3MTQ1NjMzNTQsImFjciI6IjEiLCJhaW8iOiJBUlFCNi80V0FBQUFjRml4Y1pYcUNoUVZ5ZWR6bHBCcXJkNlFkK1FQalFmSVVMcFcwWndBWS9uSTBZYm9pdWVHb3lqWTFiN1hVNWhPZ3h0VDJPTjVXVE5sY0tzMkN3NVg4K1lDaUxOVjkxei9Rek50dFR2UXlsWWkxeFh1VGdTaVR1SXBkRHJ3a2lTVWxTalNzdFJQVlE0RWgwNVRIeUNGNTBmREcyZmg2WEp3WGZEVXNOcnhScWhxRi8rQ2RnSTY4ZUdEcytFOS9CRTZQVGIrdldqL1dyampkOUZXU21GbUcyNWFoaXdLRmMxQlZGWjFobTg3czNDUVRycEc1aWtHVFd5UGFVTnBHUjVwRVFQaFVVV24vcXlZOXc0a3Ywb21wN3hoK3huMjVpMXBXcC9HTlA4TlNVQ0w3bVZRN3p0YXltSUQ3Nnd1WGI0OWxrV1F3RVpiOE9NM0F5d3U5T3lvZWZFRFpqM1JyL0xHZlhrWUJXTG5FNDQ9IiwiYWx0c2VjaWQiOiI1OjoxMDAzMjAwMjBCQUQ5QTQxIiwiYW1yIjpbInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsImZhbWlseV9uYW1lIjoiSHVhbmciLCJnaXZlbl9uYW1lIjoiUGhpbCIsImdyb3VwcyI6WyJiY2JkZWEwMy1jMmI2LTQ2ODQtYWY3Ni1iMmU0Mjk0MzlkYTkiLCJkNDlkMmFhNy1lMmZkLTQ2OTItOGViMS0xZmNiN2VkNzJiNTQiLCI2N2NmNThlMy1hMDBiLTQ2NjMtYjFhOC1kOTk4NjliMDU4MWMiXSwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjEyMi4xMTYuMzQuMTg3IiwibmFtZSI6IlBoaWwgSHVhbmciLCJvaWQiOiIzZTFiZDJhOS0zNjUyLTRlZTEtYTgxNC01NjIyMGQ3NmY0ZWQiLCJwdWlkIjoiMTAwMzIwMDJCNDE0MTc0MyIsInJoIjoiMC5BVVlBcjBIQVlPWFRVa0dnTk9qa1NjTkt0RVpJZjNrQXV0ZFB1a1Bhd2ZqMk1CT0FBR2suIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiMnphZ2tZclNMV1haUHlwOGpObHRFTnUyUVBzc0t2aGxsNENWMFp4RmRNNCIsInRpZCI6IjYwYzA0MWFmLWQzZTUtNDE1Mi1hMDM0LWU4ZTQ0OWMzNGFiNCIsInVuaXF1ZV9uYW1lIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsInV0aSI6InFQeHhPd3N0OEUyazhGR3ZqemNKQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjJiNzQ1YmRmLTA4MDMtNGQ4MC1hYTY1LTgyMmM0NDkzZGFhYyIsIjY5MDkxMjQ2LTIwZTgtNGE1Ni1hYTRkLTA2NjA3NWIyYTdhOCIsIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCIsImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2FlIjoiMSIsInhtc19jYyI6WyJDUDEiXSwieG1zX2Vkb3YiOnRydWUsInhtc190Y2R0IjoxNjg2MjM3MTE4fQ.ExtqB0shX6OyTMvdiQe4sRmt66mu4xokbZPW4CrRRWpM6zRD14UuztvLipYxGenxaOVithb5vDXfXOnqcxlbd-lseG5jlFisbbGn46Xg8sdBboRwsQfX7CbPrPqxwWKJqiWj-xOJ2-GK7tO20e4U0iTt2JUCNHylos9y5MUsAwDQJbCWRJz2SWwRDW6cYYULlx50rHkSpCfyec7VVV9SFN2Dl02yLjI0QBj1PYaNirXRmGi_VctNCR3UJfhcwzyMZaIBMVg0fXzvdXCM7K1Wy_XkeGBy0fS6dvgVBmNx_Kfr6nZXGo6rlNLJUI_fW9oNd_PewwA0ArcfxRFJOXyvrA",
+                ),
+                HeaderName(
+                    "content-type",
+                ): HeaderValue(
+                    "application/json",
+                ),
+                HeaderName(
+                    "user-agent",
+                ): HeaderValue(
+                    "azsdk-rust-mgmt_compute/0.20.0 (1.77.2; macos; aarch64)",
+                ),
+            },
+        ),
+        body: Bytes(
+            b"{\"location\":\"westus3\",\"properties\":{\"hardwareProfile\":{\"vmSize\":\"Standard_B1ms\"},\"storageProfile\":{\"imageReference\":{\"publisher\":\"canonical\",\"offer\":\"0001-com-ubuntu-minimal-jammy\",\"sku\":\"minimal-22_04-lts-gen2\",\"version\":\"22.04.202404100\"},\"osDisk\":{\"osType\":\"Linux\",\"name\":\"osdisk\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"FromImage\",\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"},\"dataDisks\":[{\"lun\":0,\"name\":\"datadisk1\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"Empty\",\"diskSizeGB\":10,\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"}]},\"osProfile\":{\"computerName\":\"vm-rust-lab-westus3\",\"adminUsername\":\"repairman\",\"adminPassword\":\"Y5Qq}oXdEHp*Pv:JUjYQ\",\"linuxConfiguration\":{\"disablePasswordAuthentication\":false,\"patchSettings\":{\"patchMode\":\"ImageDefault\",\"assessmentMode\":\"ImageDefault\"}}},\"networkProfile\":{\"networkApiVersion\":\"2020-11-01\",\"networkInterfaceConfigurations\":[{\"name\":\"nic1\",\"properties\":{\"primary\":true,\"deleteOption\":\"Delete\",\"enableAcceleratedNetworking\":false,\"enableIPForwarding\":true,\"dnsSettings\":{\"dnsServers\":[\"168.63.129.16\"]},\"ipConfigurations\":[{\"name\":\"ipconfig1\",\"properties\":{\"subnet\":{\"id\":\"/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm\"},\"primary\":true,\"privateIPAddressVersion\":\"IPv4\"}}],\"auxiliaryMode\":\"None\",\"auxiliarySku\":\"None\"}}]},\"timeCreated\":null},\"zones\":[\"1\"]}",
+        ),
+    }
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:56Z TRACE async_io::driver] sleeping for 250 us
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- react;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- react;
+[2024-05-01T10:37:56Z TRACE async_io::driver] stops hogging the reactor
+[2024-05-01T10:37:56Z TRACE async_io::driver] notified
+[2024-05-01T10:37:56Z TRACE async_io::driver] waiting on I/O
+[2024-05-01T10:37:56Z TRACE tracing::span] react;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> react;
+[2024-05-01T10:37:56Z DEBUG azure_core::http_client::reqwest] performing request PUT 'https://management.azure.com//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3?api-version=2023-09-01' with `reqwest`
+[2024-05-01T10:37:56Z TRACE tracing::span] process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> process_timers;
+[2024-05-01T10:37:56Z TRACE async_io::reactor] 0 ready wakers
+[2024-05-01T10:37:56Z TRACE tracing::span::active] <- process_timers;
+[2024-05-01T10:37:56Z TRACE tracing::span] -- process_timers;
+[2024-05-01T10:37:56Z TRACE polling] Poller::wait; timeout=None
+[2024-05-01T10:37:56Z DEBUG reqwest::connect] starting new connection: https://management.azure.com/
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> Poller::wait;
+[2024-05-01T10:37:56Z TRACE polling::kqueue] wait; kqueue_fd=8 timeout=None
+[2024-05-01T10:37:56Z TRACE tracing::span::active] -> wait;
+[2024-05-01T10:37:56Z TRACE hyper_util::client::legacy::connect::http] Http::connect; scheme=Some("https"), host=Some("management.azure.com"), port=None
+[2024-05-01T10:37:56Z DEBUG hyper_util::client::legacy::connect::dns] resolving host="management.azure.com"
+[2024-05-01T10:37:56Z DEBUG hyper_util::client::legacy::connect::http] connecting to 4.150.240.10:443
+[2024-05-01T10:37:56Z DEBUG hyper_util::client::legacy::connect::http] connected to 4.150.240.10:443
+[2024-05-01T10:37:56Z TRACE hyper_util::client::legacy::client] http1 handshake complete, spawning background dispatcher task
+[2024-05-01T10:37:58Z TRACE azure_core::policies::retry_policies::retry_policy] Successful response. Request=Request { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("management.azure.com")), port: None, path: "//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3", query: Some("api-version=2023-09-01"), fragment: None }, method: Put, headers: Headers({HeaderName("authorization"): HeaderValue("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjBjMDQxYWYtZDNlNS00MTUyLWEwMzQtZThlNDQ5YzM0YWI0LyIsImlhdCI6MTcxNDU1ODk2MiwibmJmIjoxNzE0NTU4OTYyLCJleHAiOjE3MTQ1NjMzNTQsImFjciI6IjEiLCJhaW8iOiJBUlFCNi80V0FBQUFjRml4Y1pYcUNoUVZ5ZWR6bHBCcXJkNlFkK1FQalFmSVVMcFcwWndBWS9uSTBZYm9pdWVHb3lqWTFiN1hVNWhPZ3h0VDJPTjVXVE5sY0tzMkN3NVg4K1lDaUxOVjkxei9Rek50dFR2UXlsWWkxeFh1VGdTaVR1SXBkRHJ3a2lTVWxTalNzdFJQVlE0RWgwNVRIeUNGNTBmREcyZmg2WEp3WGZEVXNOcnhScWhxRi8rQ2RnSTY4ZUdEcytFOS9CRTZQVGIrdldqL1dyampkOUZXU21GbUcyNWFoaXdLRmMxQlZGWjFobTg3czNDUVRycEc1aWtHVFd5UGFVTnBHUjVwRVFQaFVVV24vcXlZOXc0a3Ywb21wN3hoK3huMjVpMXBXcC9HTlA4TlNVQ0w3bVZRN3p0YXltSUQ3Nnd1WGI0OWxrV1F3RVpiOE9NM0F5d3U5T3lvZWZFRFpqM1JyL0xHZlhrWUJXTG5FNDQ9IiwiYWx0c2VjaWQiOiI1OjoxMDAzMjAwMjBCQUQ5QTQxIiwiYW1yIjpbInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsImZhbWlseV9uYW1lIjoiSHVhbmciLCJnaXZlbl9uYW1lIjoiUGhpbCIsImdyb3VwcyI6WyJiY2JkZWEwMy1jMmI2LTQ2ODQtYWY3Ni1iMmU0Mjk0MzlkYTkiLCJkNDlkMmFhNy1lMmZkLTQ2OTItOGViMS0xZmNiN2VkNzJiNTQiLCI2N2NmNThlMy1hMDBiLTQ2NjMtYjFhOC1kOTk4NjliMDU4MWMiXSwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjEyMi4xMTYuMzQuMTg3IiwibmFtZSI6IlBoaWwgSHVhbmciLCJvaWQiOiIzZTFiZDJhOS0zNjUyLTRlZTEtYTgxNC01NjIyMGQ3NmY0ZWQiLCJwdWlkIjoiMTAwMzIwMDJCNDE0MTc0MyIsInJoIjoiMC5BVVlBcjBIQVlPWFRVa0dnTk9qa1NjTkt0RVpJZjNrQXV0ZFB1a1Bhd2ZqMk1CT0FBR2suIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiMnphZ2tZclNMV1haUHlwOGpObHRFTnUyUVBzc0t2aGxsNENWMFp4RmRNNCIsInRpZCI6IjYwYzA0MWFmLWQzZTUtNDE1Mi1hMDM0LWU4ZTQ0OWMzNGFiNCIsInVuaXF1ZV9uYW1lIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsInV0aSI6InFQeHhPd3N0OEUyazhGR3ZqemNKQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjJiNzQ1YmRmLTA4MDMtNGQ4MC1hYTY1LTgyMmM0NDkzZGFhYyIsIjY5MDkxMjQ2LTIwZTgtNGE1Ni1hYTRkLTA2NjA3NWIyYTdhOCIsIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCIsImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2FlIjoiMSIsInhtc19jYyI6WyJDUDEiXSwieG1zX2Vkb3YiOnRydWUsInhtc190Y2R0IjoxNjg2MjM3MTE4fQ.ExtqB0shX6OyTMvdiQe4sRmt66mu4xokbZPW4CrRRWpM6zRD14UuztvLipYxGenxaOVithb5vDXfXOnqcxlbd-lseG5jlFisbbGn46Xg8sdBboRwsQfX7CbPrPqxwWKJqiWj-xOJ2-GK7tO20e4U0iTt2JUCNHylos9y5MUsAwDQJbCWRJz2SWwRDW6cYYULlx50rHkSpCfyec7VVV9SFN2Dl02yLjI0QBj1PYaNirXRmGi_VctNCR3UJfhcwzyMZaIBMVg0fXzvdXCM7K1Wy_XkeGBy0fS6dvgVBmNx_Kfr6nZXGo6rlNLJUI_fW9oNd_PewwA0ArcfxRFJOXyvrA"), HeaderName("content-type"): HeaderValue("application/json"), HeaderName("user-agent"): HeaderValue("azsdk-rust-mgmt_compute/0.20.0 (1.77.2; macos; aarch64)")}), body: Bytes(b"{\"location\":\"westus3\",\"properties\":{\"hardwareProfile\":{\"vmSize\":\"Standard_B1ms\"},\"storageProfile\":{\"imageReference\":{\"publisher\":\"canonical\",\"offer\":\"0001-com-ubuntu-minimal-jammy\",\"sku\":\"minimal-22_04-lts-gen2\",\"version\":\"22.04.202404100\"},\"osDisk\":{\"osType\":\"Linux\",\"name\":\"osdisk\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"FromImage\",\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"},\"dataDisks\":[{\"lun\":0,\"name\":\"datadisk1\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"Empty\",\"diskSizeGB\":10,\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"}]},\"osProfile\":{\"computerName\":\"vm-rust-lab-westus3\",\"adminUsername\":\"repairman\",\"adminPassword\":\"Y5Qq}oXdEHp*Pv:JUjYQ\",\"linuxConfiguration\":{\"disablePasswordAuthentication\":false,\"patchSettings\":{\"patchMode\":\"ImageDefault\",\"assessmentMode\":\"ImageDefault\"}}},\"networkProfile\":{\"networkApiVersion\":\"2020-11-01\",\"networkInterfaceConfigurations\":[{\"name\":\"nic1\",\"properties\":{\"primary\":true,\"deleteOption\":\"Delete\",\"enableAcceleratedNetworking\":false,\"enableIPForwarding\":true,\"dnsSettings\":{\"dnsServers\":[\"168.63.129.16\"]},\"ipConfigurations\":[{\"name\":\"ipconfig1\",\"properties\":{\"subnet\":{\"id\":\"/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm\"},\"primary\":true,\"privateIPAddressVersion\":\"IPv4\"}}],\"auxiliaryMode\":\"None\",\"auxiliarySku\":\"None\"}}]},\"timeCreated\":null},\"zones\":[\"1\"]}") } response=Response { status: Created, headers: Headers({HeaderName("x-ms-ratelimit-remaining-resource"): HeaderValue("Microsoft.Compute/PutVMSubscriptionMaximum;1499,Microsoft.Compute/PutVMResource;11"), HeaderName("x-ms-ratelimit-remaining-subscription-writes"): HeaderValue("1199"), HeaderName("cache-control"): HeaderValue("no-cache"), HeaderName("x-ms-request-id"): HeaderValue("a5bb5493-eb80-404e-aafc-e09bdb6d3b95"), HeaderName("x-ms-correlation-request-id"): HeaderValue("65179d7e-938e-41f4-9be5-b1606deb2794"), HeaderName("x-ms-routing-request-id"): HeaderValue("JAPANEAST:20240501T103758Z:65179d7e-938e-41f4-9be5-b1606deb2794"), HeaderName("content-length"): HeaderValue("2386"), HeaderName("retry-after"): HeaderValue("10"), HeaderName("azure-asyncoperation"): HeaderValue("https://management.azure.com/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/providers/Microsoft.Compute/locations/WestUS3/operations/a5bb5493-eb80-404e-aafc-e09bdb6d3b95?p=5e8163ae-2ee4-432f-bc73-e4b209e5f895&api-version=2023-09-01&t=638501566783974933&c=MIIHADCCBeigAwIBAgITHgPtKFZCSVesK0WPLAAAA-0oVjANBgkqhkiG9w0BAQsFADBEMRMwEQYKCZImiZPyLGQBGRYDR0JMMRMwEQYKCZImiZPyLGQBGRYDQU1FMRgwFgYDVQQDEw9BTUUgSW5mcmEgQ0EgMDYwHhcNMjQwMjAyMTQwMTAxWhcNMjUwMTI3MTQwMTAxWjBAMT4wPAYDVQQDEzVhc3luY29wZXJhdGlvbnNpZ25pbmdjZXJ0aWZpY2F0ZS5tYW5hZ2VtZW50LmF6dXJlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK91qXSatAXLDynhJ7OmG-j0vO0hqhAjRdFNuJg9SayOMQgzA-obKyjKzODz-eKOFoz6nV1rqHbnb7YUxvz5Ke74ZDjbxdnwYGhAju6jD9ThtiS78Bt0iUKpZpY2QDYxCrpC2DaO5kCSOWUb4PBGhVDkexnKJTTgzHe6iS1gE6V9VyO5bN14Lsq_45qNHoMXlm6258OEIXZ2gvBFpy3CkYEY1Arc4oCuWYWzDTjzP7FJj-v_gVsjhKFAqVWdVND8k982bhNvxjCDqvTMMy2wR4V0GDA6ur0EnTPCKX1N3S7GUf17d1gJdpMzlb_jeHKjnYWKYv0LNyFwaqnk7GeduL0CAwEAAaOCA-0wggPpMCcGCSsGAQQBgjcVCgQaMBgwCgYIKwYBBQUHAwEwCgYIKwYBBQUHAwIwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIhpDjDYTVtHiE8Ys-hZvdFs6dEoFggvX2K4Py0SACAWQCAQowggHLBggrBgEFBQcBAQSCAb0wggG5MGMGCCsGAQUFBzAChldodHRwOi8vY3JsLm1pY3Jvc29mdC5jb20vcGtpaW5mcmEvQ2VydHMvQkwyUEtJSU5UQ0EwMi5BTUUuR0JMX0FNRSUyMEluZnJhJTIwQ0ElMjAwNi5jcnQwUwYIKwYBBQUHMAKGR2h0dHA6Ly9jcmwxLmFtZS5nYmwvYWlhL0JMMlBLSUlOVENBMDIuQU1FLkdCTF9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3J0MFMGCCsGAQUFBzAChkdodHRwOi8vY3JsMi5hbWUuZ2JsL2FpYS9CTDJQS0lJTlRDQTAyLkFNRS5HQkxfQU1FJTIwSW5mcmElMjBDQSUyMDA2LmNydDBTBggrBgEFBQcwAoZHaHR0cDovL2NybDMuYW1lLmdibC9haWEvQkwyUEtJSU5UQ0EwMi5BTUUuR0JMX0FNRSUyMEluZnJhJTIwQ0ElMjAwNi5jcnQwUwYIKwYBBQUHMAKGR2h0dHA6Ly9jcmw0LmFtZS5nYmwvYWlhL0JMMlBLSUlOVENBMDIuQU1FLkdCTF9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3J0MB0GA1UdDgQWBBSg-6hed5hnNyz0o02J9YCREXHiLTAOBgNVHQ8BAf8EBAMCBaAwggEmBgNVHR8EggEdMIIBGTCCARWgggERoIIBDYY_aHR0cDovL2NybC5taWNyb3NvZnQuY29tL3BraWluZnJhL0NSTC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMS5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMi5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMy5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsNC5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JsMBcGA1UdIAQQMA4wDAYKKwYBBAGCN3sBATAfBgNVHSMEGDAWgBTxRmjG8cPwKy19i2rhsvm-NfzRQTAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAJqTNNAFYbI8tYZvhkWYcJR1aDHuYU1URw_WgivmBHLOfIAZaztxQqvdsxn7EbAcjcOcq9H3pjUKGr3BRtnBNY431tr6872Si1uhnA9Q0oY_Loy1TELqVVHSnZv5Ak_tfVj8WfIk_tPErWJFKYSyH5rm8Oib-ESxwUgReD_HF9MnY14bWX17k0lKxbWDXBozqanPn8qTmnfF9QP-lqUSWCaCx8-p8Ko_YAwLYsD8uPcZogm5XP6QN4UM88O0WhW2SbtydDRtmuU41k0j2byj3C2lK-JwND1w0CfKV6HlCFm_yKAdbmJUK50Y8Mkh2ebZhN0HOcoGcebh1hrMvD1lL1A&s=iaBWksVQNZH6A-Oq6p8xAG_lsjiSXAa2hu9b4lk05CBYnZJzV9xuuewFP73AE0nPeJ3vXrIfJeeLQSB4PbfTTFCehWIwPsN1zQawPPlDuc-CTh0ffPUXrVEzENxvJdADIvE8Pc8Aii1j1LeWAIX4PAqn2m6Cm7AxSs2uihWyBf06eY-fPCgQFOq1pJF5hfUolbCx9Y1Qp9uvl65jbpu8NQpzlhnstBt32Iw18Gt7QwD0mFTkaKnqJ-QgZw45lhIpQxGpjzrFGYNwmas49WsWzCm3mt1lcVD2znedO55qvWkJx3xBSAes5DF9LzMAd-EJt2IfhYF0cMU-8Lc4sXG3kw&h=3pKH8ZK6gmszmdv5-_OT6KmNGQTFOIvuqC7-a-Ajy0Y"), HeaderName("x-cache"): HeaderValue("CONFIG_NOCACHE"), HeaderName("x-msedge-ref"): HeaderValue("Ref A: 223B6A61F2F74AE5ADD3B2FDD0C4CE20 Ref B: TYO201151003029 Ref C: 2024-05-01T10:37:56Z"), HeaderName("content-type"): HeaderValue("application/json; charset=utf-8"), HeaderName("date"): HeaderValue("Wed, 01 May 2024 10:37:58 GMT"), HeaderName("x-content-type-options"): HeaderValue("nosniff"), HeaderName("strict-transport-security"): HeaderValue("max-age=31536000; includeSubDomains"), HeaderName("expires"): HeaderValue("-1"), HeaderName("pragma"): HeaderValue("no-cache"), HeaderName("azure-asyncnotification"): HeaderValue("Enabled")}), body: "<BODY>" }
+[2024-05-01T10:37:58Z TRACE azure_mgmt_compute::package_2023_10_02::virtual_machines::create_or_update] current provisioning_state: InProgress
+[2024-05-01T10:38:08Z TRACE azure_identity::token_credentials::cache] returning cached token
+[2024-05-01T10:38:08Z DEBUG azure_core::policies::transport] the following request will be passed to the transport policy: Request {
         url: Url {
             scheme: "https",
             cannot_be_a_base: false,
@@ -293,14 +348,14 @@ $ cargo run
                     "azsdk-rust-mgmt_compute/0.20.0 (1.77.2; macos; aarch64)",
                 ),
                 HeaderName(
+                    "authorization",
+                ): HeaderValue(
+                    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjBjMDQxYWYtZDNlNS00MTUyLWEwMzQtZThlNDQ5YzM0YWI0LyIsImlhdCI6MTcxNDU1ODk2MiwibmJmIjoxNzE0NTU4OTYyLCJleHAiOjE3MTQ1NjMzNTQsImFjciI6IjEiLCJhaW8iOiJBUlFCNi80V0FBQUFjRml4Y1pYcUNoUVZ5ZWR6bHBCcXJkNlFkK1FQalFmSVVMcFcwWndBWS9uSTBZYm9pdWVHb3lqWTFiN1hVNWhPZ3h0VDJPTjVXVE5sY0tzMkN3NVg4K1lDaUxOVjkxei9Rek50dFR2UXlsWWkxeFh1VGdTaVR1SXBkRHJ3a2lTVWxTalNzdFJQVlE0RWgwNVRIeUNGNTBmREcyZmg2WEp3WGZEVXNOcnhScWhxRi8rQ2RnSTY4ZUdEcytFOS9CRTZQVGIrdldqL1dyampkOUZXU21GbUcyNWFoaXdLRmMxQlZGWjFobTg3czNDUVRycEc1aWtHVFd5UGFVTnBHUjVwRVFQaFVVV24vcXlZOXc0a3Ywb21wN3hoK3huMjVpMXBXcC9HTlA4TlNVQ0w3bVZRN3p0YXltSUQ3Nnd1WGI0OWxrV1F3RVpiOE9NM0F5d3U5T3lvZWZFRFpqM1JyL0xHZlhrWUJXTG5FNDQ9IiwiYWx0c2VjaWQiOiI1OjoxMDAzMjAwMjBCQUQ5QTQxIiwiYW1yIjpbInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsImZhbWlseV9uYW1lIjoiSHVhbmciLCJnaXZlbl9uYW1lIjoiUGhpbCIsImdyb3VwcyI6WyJiY2JkZWEwMy1jMmI2LTQ2ODQtYWY3Ni1iMmU0Mjk0MzlkYTkiLCJkNDlkMmFhNy1lMmZkLTQ2OTItOGViMS0xZmNiN2VkNzJiNTQiLCI2N2NmNThlMy1hMDBiLTQ2NjMtYjFhOC1kOTk4NjliMDU4MWMiXSwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjEyMi4xMTYuMzQuMTg3IiwibmFtZSI6IlBoaWwgSHVhbmciLCJvaWQiOiIzZTFiZDJhOS0zNjUyLTRlZTEtYTgxNC01NjIyMGQ3NmY0ZWQiLCJwdWlkIjoiMTAwMzIwMDJCNDE0MTc0MyIsInJoIjoiMC5BVVlBcjBIQVlPWFRVa0dnTk9qa1NjTkt0RVpJZjNrQXV0ZFB1a1Bhd2ZqMk1CT0FBR2suIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiMnphZ2tZclNMV1haUHlwOGpObHRFTnUyUVBzc0t2aGxsNENWMFp4RmRNNCIsInRpZCI6IjYwYzA0MWFmLWQzZTUtNDE1Mi1hMDM0LWU4ZTQ0OWMzNGFiNCIsInVuaXF1ZV9uYW1lIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsInV0aSI6InFQeHhPd3N0OEUyazhGR3ZqemNKQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjJiNzQ1YmRmLTA4MDMtNGQ4MC1hYTY1LTgyMmM0NDkzZGFhYyIsIjY5MDkxMjQ2LTIwZTgtNGE1Ni1hYTRkLTA2NjA3NWIyYTdhOCIsIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCIsImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2FlIjoiMSIsInhtc19jYyI6WyJDUDEiXSwieG1zX2Vkb3YiOnRydWUsInhtc190Y2R0IjoxNjg2MjM3MTE4fQ.ExtqB0shX6OyTMvdiQe4sRmt66mu4xokbZPW4CrRRWpM6zRD14UuztvLipYxGenxaOVithb5vDXfXOnqcxlbd-lseG5jlFisbbGn46Xg8sdBboRwsQfX7CbPrPqxwWKJqiWj-xOJ2-GK7tO20e4U0iTt2JUCNHylos9y5MUsAwDQJbCWRJz2SWwRDW6cYYULlx50rHkSpCfyec7VVV9SFN2Dl02yLjI0QBj1PYaNirXRmGi_VctNCR3UJfhcwzyMZaIBMVg0fXzvdXCM7K1Wy_XkeGBy0fS6dvgVBmNx_Kfr6nZXGo6rlNLJUI_fW9oNd_PewwA0ArcfxRFJOXyvrA",
+                ),
+                HeaderName(
                     "content-type",
                 ): HeaderValue(
                     "application/json",
-                ),
-                HeaderName(
-                    "authorization",
-                ): HeaderValue(
-                    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjBjMDQxYWYtZDNlNS00MTUyLWEwMzQtZThlNDQ5YzM0YWI0LyIsImlhdCI6MTcxNDU1NDIzNywibmJmIjoxNzE0NTU0MjM3LCJleHAiOjE3MTQ1NTg5MzUsImFjciI6IjEiLCJhaW8iOiJBUlFCNi80V0FBQUFWeFVHcDZDaUpBVFhNWjFlZ0pJczg2ZDZqVGlOR21FdktBYkdJbEltVWQ3TnBielpLNGpQOVdLTFJZbEV3c1BNWVMxcGpmdnVOeDZHRm5TVnZjQ0RvQjVXTHAxakpPbUs4UzRscXpMajdBSDQwSitadkRFQnIrU0VsbXZrbk1JWU5SMXU1bDFkWjM2SURwK1pON0pFS0ZBbDJiYkw5bUc4Q2dvcDh3RDhmRFAzeXBKekN0aXRtSTVkL2dBamQ4VU5qVHo3KzVaY1NOVHY5NU45RDlOejQ2ZDNvVEUzT2YrbC9oYWxNMzIvazNKZUdud2lURU1zUWUwWUFDTGU1L3pSeUh0NzdKaVMydHZOSmpEdEluVnFydkJuYkJ6bVI4M3lZbDVqZS9Rb3hOR29Dd2N4S2pEMXp4WllNOFBZUExGb2pxMDRsZUNJVi9LNGZJaXM3TjJ3TzJmRUJhaUtNcERsT0JHTGxNZEZ1TWc9IiwiYWx0c2VjaWQiOiI1OjoxMDAzMjAwMjBCQUQ5QTQxIiwiYW1yIjpbInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsImZhbWlseV9uYW1lIjoiSHVhbmciLCJnaXZlbl9uYW1lIjoiUGhpbCIsImdyb3VwcyI6WyJiY2JkZWEwMy1jMmI2LTQ2ODQtYWY3Ni1iMmU0Mjk0MzlkYTkiLCJkNDlkMmFhNy1lMmZkLTQ2OTItOGViMS0xZmNiN2VkNzJiNTQiLCI2N2NmNThlMy1hMDBiLTQ2NjMtYjFhOC1kOTk4NjliMDU4MWMiXSwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjEyMi4xMTYuMzQuMTg3IiwibmFtZSI6IlBoaWwgSHVhbmciLCJvaWQiOiIzZTFiZDJhOS0zNjUyLTRlZTEtYTgxNC01NjIyMGQ3NmY0ZWQiLCJwdWlkIjoiMTAwMzIwMDJCNDE0MTc0MyIsInJoIjoiMC5BVVlBcjBIQVlPWFRVa0dnTk9qa1NjTkt0RVpJZjNrQXV0ZFB1a1Bhd2ZqMk1CT0FBR2suIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiMnphZ2tZclNMV1haUHlwOGpObHRFTnUyUVBzc0t2aGxsNENWMFp4RmRNNCIsInRpZCI6IjYwYzA0MWFmLWQzZTUtNDE1Mi1hMDM0LWU4ZTQ0OWMzNGFiNCIsInVuaXF1ZV9uYW1lIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsInV0aSI6IllMQVoyRVc3MlVDNGhFNmFVRXdDQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjJiNzQ1YmRmLTA4MDMtNGQ4MC1hYTY1LTgyMmM0NDkzZGFhYyIsIjY5MDkxMjQ2LTIwZTgtNGE1Ni1hYTRkLTA2NjA3NWIyYTdhOCIsIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCIsImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2FlIjoiMSIsInhtc19jYyI6WyJDUDEiXSwieG1zX2Vkb3YiOnRydWUsInhtc190Y2R0IjoxNjg2MjM3MTE4fQ.Gs7BuhcaeNmpfnya-jyZWPYYa_ZRLH0h94JJ0wbus85fuUCAqWXD5BkIIjsHnTAHnSf3O7_oamdvc4lMOzAq_mGwZKxd0sOskROCHAJtoEex5Z533anw6f5Aq7OgTAl2u1b88rkEkouqjy0UYL8odviRGajCK-_voTl5ANDUL2sNiO2RijTsqs_VDasXiHQoBHEOibd3mQpuIakEkwULplB95pJUHX-cwglc5tvNxf2m-bONl4T_qlOzSynEgFlIScJePqCdAt6SlFCPglIvI_IZxFPdGe96KXags72L1GzSjX-J-wLarjkcnSnflHAFGJwBa1HVfcV2vCmV7Uc8nA",
                 ),
             },
         ),
@@ -308,12 +363,12 @@ $ cargo run
             b"{\"location\":\"westus3\",\"properties\":{\"hardwareProfile\":{\"vmSize\":\"Standard_B1ms\"},\"storageProfile\":{\"imageReference\":{\"publisher\":\"canonical\",\"offer\":\"0001-com-ubuntu-minimal-jammy\",\"sku\":\"minimal-22_04-lts-gen2\",\"version\":\"22.04.202404100\"},\"osDisk\":{\"osType\":\"Linux\",\"name\":\"osdisk\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"FromImage\",\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"},\"dataDisks\":[{\"lun\":0,\"name\":\"datadisk1\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"Empty\",\"diskSizeGB\":10,\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"}]},\"osProfile\":{\"computerName\":\"vm-rust-lab-westus3\",\"adminUsername\":\"repairman\",\"adminPassword\":\"Y5Qq}oXdEHp*Pv:JUjYQ\",\"linuxConfiguration\":{\"disablePasswordAuthentication\":false,\"patchSettings\":{\"patchMode\":\"ImageDefault\",\"assessmentMode\":\"ImageDefault\"}}},\"networkProfile\":{\"networkApiVersion\":\"2020-11-01\",\"networkInterfaceConfigurations\":[{\"name\":\"nic1\",\"properties\":{\"primary\":true,\"deleteOption\":\"Delete\",\"enableAcceleratedNetworking\":false,\"enableIPForwarding\":true,\"dnsSettings\":{\"dnsServers\":[\"168.63.129.16\"]},\"ipConfigurations\":[{\"name\":\"ipconfig1\",\"properties\":{\"subnet\":{\"id\":\"/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm\"},\"primary\":true,\"privateIPAddressVersion\":\"IPv4\"}}],\"auxiliaryMode\":\"None\",\"auxiliarySku\":\"None\"}}]},\"timeCreated\":null},\"zones\":[\"1\"]}",
         ),
     }
-[2024-05-01T10:16:42Z DEBUG azure_core::http_client::reqwest] performing request PUT 'https://management.azure.com//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3?api-version=2023-09-01' with `reqwest`
-[2024-05-01T10:16:42Z DEBUG reqwest::connect] starting new connection: https://management.azure.com/
-[2024-05-01T10:16:42Z TRACE hyper_util::client::legacy::connect::http] Http::connect; scheme=Some("https"), host=Some("management.azure.com"), port=None
-[2024-05-01T10:16:42Z DEBUG hyper_util::client::legacy::connect::dns] resolving host="management.azure.com"
-[2024-05-01T10:16:42Z DEBUG hyper_util::client::legacy::connect::http] connecting to 4.150.240.10:443
-[2024-05-01T10:16:42Z DEBUG hyper_util::client::legacy::connect::http] connected to 4.150.240.10:443
-[2024-05-01T10:16:42Z TRACE hyper_util::client::legacy::client] http1 handshake complete, spawning background dispatcher task
-[2024-05-01T10:16:44Z TRACE azure_core::policies::retry_policies::retry_policy] Successful response. Request=Request { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("management.azure.com")), port: None, path: "//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3", query: Some("api-version=2023-09-01"), fragment: None }, method: Put, headers: Headers({HeaderName("user-agent"): HeaderValue("azsdk-rust-mgmt_compute/0.20.0 (1.77.2; macos; aarch64)"), HeaderName("content-type"): HeaderValue("application/json"), HeaderName("authorization"): HeaderValue("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjBjMDQxYWYtZDNlNS00MTUyLWEwMzQtZThlNDQ5YzM0YWI0LyIsImlhdCI6MTcxNDU1NDIzNywibmJmIjoxNzE0NTU0MjM3LCJleHAiOjE3MTQ1NTg5MzUsImFjciI6IjEiLCJhaW8iOiJBUlFCNi80V0FBQUFWeFVHcDZDaUpBVFhNWjFlZ0pJczg2ZDZqVGlOR21FdktBYkdJbEltVWQ3TnBielpLNGpQOVdLTFJZbEV3c1BNWVMxcGpmdnVOeDZHRm5TVnZjQ0RvQjVXTHAxakpPbUs4UzRscXpMajdBSDQwSitadkRFQnIrU0VsbXZrbk1JWU5SMXU1bDFkWjM2SURwK1pON0pFS0ZBbDJiYkw5bUc4Q2dvcDh3RDhmRFAzeXBKekN0aXRtSTVkL2dBamQ4VU5qVHo3KzVaY1NOVHY5NU45RDlOejQ2ZDNvVEUzT2YrbC9oYWxNMzIvazNKZUdud2lURU1zUWUwWUFDTGU1L3pSeUh0NzdKaVMydHZOSmpEdEluVnFydkJuYkJ6bVI4M3lZbDVqZS9Rb3hOR29Dd2N4S2pEMXp4WllNOFBZUExGb2pxMDRsZUNJVi9LNGZJaXM3TjJ3TzJmRUJhaUtNcERsT0JHTGxNZEZ1TWc9IiwiYWx0c2VjaWQiOiI1OjoxMDAzMjAwMjBCQUQ5QTQxIiwiYW1yIjpbInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsImZhbWlseV9uYW1lIjoiSHVhbmciLCJnaXZlbl9uYW1lIjoiUGhpbCIsImdyb3VwcyI6WyJiY2JkZWEwMy1jMmI2LTQ2ODQtYWY3Ni1iMmU0Mjk0MzlkYTkiLCJkNDlkMmFhNy1lMmZkLTQ2OTItOGViMS0xZmNiN2VkNzJiNTQiLCI2N2NmNThlMy1hMDBiLTQ2NjMtYjFhOC1kOTk4NjliMDU4MWMiXSwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjEyMi4xMTYuMzQuMTg3IiwibmFtZSI6IlBoaWwgSHVhbmciLCJvaWQiOiIzZTFiZDJhOS0zNjUyLTRlZTEtYTgxNC01NjIyMGQ3NmY0ZWQiLCJwdWlkIjoiMTAwMzIwMDJCNDE0MTc0MyIsInJoIjoiMC5BVVlBcjBIQVlPWFRVa0dnTk9qa1NjTkt0RVpJZjNrQXV0ZFB1a1Bhd2ZqMk1CT0FBR2suIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiMnphZ2tZclNMV1haUHlwOGpObHRFTnUyUVBzc0t2aGxsNENWMFp4RmRNNCIsInRpZCI6IjYwYzA0MWFmLWQzZTUtNDE1Mi1hMDM0LWU4ZTQ0OWMzNGFiNCIsInVuaXF1ZV9uYW1lIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsInV0aSI6IllMQVoyRVc3MlVDNGhFNmFVRXdDQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjJiNzQ1YmRmLTA4MDMtNGQ4MC1hYTY1LTgyMmM0NDkzZGFhYyIsIjY5MDkxMjQ2LTIwZTgtNGE1Ni1hYTRkLTA2NjA3NWIyYTdhOCIsIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCIsImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2FlIjoiMSIsInhtc19jYyI6WyJDUDEiXSwieG1zX2Vkb3YiOnRydWUsInhtc190Y2R0IjoxNjg2MjM3MTE4fQ.Gs7BuhcaeNmpfnya-jyZWPYYa_ZRLH0h94JJ0wbus85fuUCAqWXD5BkIIjsHnTAHnSf3O7_oamdvc4lMOzAq_mGwZKxd0sOskROCHAJtoEex5Z533anw6f5Aq7OgTAl2u1b88rkEkouqjy0UYL8odviRGajCK-_voTl5ANDUL2sNiO2RijTsqs_VDasXiHQoBHEOibd3mQpuIakEkwULplB95pJUHX-cwglc5tvNxf2m-bONl4T_qlOzSynEgFlIScJePqCdAt6SlFCPglIvI_IZxFPdGe96KXags72L1GzSjX-J-wLarjkcnSnflHAFGJwBa1HVfcV2vCmV7Uc8nA")}), body: Bytes(b"{\"location\":\"westus3\",\"properties\":{\"hardwareProfile\":{\"vmSize\":\"Standard_B1ms\"},\"storageProfile\":{\"imageReference\":{\"publisher\":\"canonical\",\"offer\":\"0001-com-ubuntu-minimal-jammy\",\"sku\":\"minimal-22_04-lts-gen2\",\"version\":\"22.04.202404100\"},\"osDisk\":{\"osType\":\"Linux\",\"name\":\"osdisk\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"FromImage\",\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"},\"dataDisks\":[{\"lun\":0,\"name\":\"datadisk1\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"Empty\",\"diskSizeGB\":10,\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"}]},\"osProfile\":{\"computerName\":\"vm-rust-lab-westus3\",\"adminUsername\":\"repairman\",\"adminPassword\":\"Y5Qq}oXdEHp*Pv:JUjYQ\",\"linuxConfiguration\":{\"disablePasswordAuthentication\":false,\"patchSettings\":{\"patchMode\":\"ImageDefault\",\"assessmentMode\":\"ImageDefault\"}}},\"networkProfile\":{\"networkApiVersion\":\"2020-11-01\",\"networkInterfaceConfigurations\":[{\"name\":\"nic1\",\"properties\":{\"primary\":true,\"deleteOption\":\"Delete\",\"enableAcceleratedNetworking\":false,\"enableIPForwarding\":true,\"dnsSettings\":{\"dnsServers\":[\"168.63.129.16\"]},\"ipConfigurations\":[{\"name\":\"ipconfig1\",\"properties\":{\"subnet\":{\"id\":\"/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm\"},\"primary\":true,\"privateIPAddressVersion\":\"IPv4\"}}],\"auxiliaryMode\":\"None\",\"auxiliarySku\":\"None\"}}]},\"timeCreated\":null},\"zones\":[\"1\"]}") } response=Response { status: Ok, headers: Headers({HeaderName("expires"): HeaderValue("-1"), HeaderName("content-type"): HeaderValue("application/json; charset=utf-8"), HeaderName("azure-asyncoperation"): HeaderValue("https://management.azure.com/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/providers/Microsoft.Compute/locations/WestUS3/operations/aee34dcf-a919-447d-b19a-2c43180cef90?p=5e8163ae-2ee4-432f-bc73-e4b209e5f895&api-version=2023-09-01&t=638501554044614004&c=MIIHADCCBeigAwIBAgITHgPtKFZCSVesK0WPLAAAA-0oVjANBgkqhkiG9w0BAQsFADBEMRMwEQYKCZImiZPyLGQBGRYDR0JMMRMwEQYKCZImiZPyLGQBGRYDQU1FMRgwFgYDVQQDEw9BTUUgSW5mcmEgQ0EgMDYwHhcNMjQwMjAyMTQwMTAxWhcNMjUwMTI3MTQwMTAxWjBAMT4wPAYDVQQDEzVhc3luY29wZXJhdGlvbnNpZ25pbmdjZXJ0aWZpY2F0ZS5tYW5hZ2VtZW50LmF6dXJlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK91qXSatAXLDynhJ7OmG-j0vO0hqhAjRdFNuJg9SayOMQgzA-obKyjKzODz-eKOFoz6nV1rqHbnb7YUxvz5Ke74ZDjbxdnwYGhAju6jD9ThtiS78Bt0iUKpZpY2QDYxCrpC2DaO5kCSOWUb4PBGhVDkexnKJTTgzHe6iS1gE6V9VyO5bN14Lsq_45qNHoMXlm6258OEIXZ2gvBFpy3CkYEY1Arc4oCuWYWzDTjzP7FJj-v_gVsjhKFAqVWdVND8k982bhNvxjCDqvTMMy2wR4V0GDA6ur0EnTPCKX1N3S7GUf17d1gJdpMzlb_jeHKjnYWKYv0LNyFwaqnk7GeduL0CAwEAAaOCA-0wggPpMCcGCSsGAQQBgjcVCgQaMBgwCgYIKwYBBQUHAwEwCgYIKwYBBQUHAwIwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIhpDjDYTVtHiE8Ys-hZvdFs6dEoFggvX2K4Py0SACAWQCAQowggHLBggrBgEFBQcBAQSCAb0wggG5MGMGCCsGAQUFBzAChldodHRwOi8vY3JsLm1pY3Jvc29mdC5jb20vcGtpaW5mcmEvQ2VydHMvQkwyUEtJSU5UQ0EwMi5BTUUuR0JMX0FNRSUyMEluZnJhJTIwQ0ElMjAwNi5jcnQwUwYIKwYBBQUHMAKGR2h0dHA6Ly9jcmwxLmFtZS5nYmwvYWlhL0JMMlBLSUlOVENBMDIuQU1FLkdCTF9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3J0MFMGCCsGAQUFBzAChkdodHRwOi8vY3JsMi5hbWUuZ2JsL2FpYS9CTDJQS0lJTlRDQTAyLkFNRS5HQkxfQU1FJTIwSW5mcmElMjBDQSUyMDA2LmNydDBTBggrBgEFBQcwAoZHaHR0cDovL2NybDMuYW1lLmdibC9haWEvQkwyUEtJSU5UQ0EwMi5BTUUuR0JMX0FNRSUyMEluZnJhJTIwQ0ElMjAwNi5jcnQwUwYIKwYBBQUHMAKGR2h0dHA6Ly9jcmw0LmFtZS5nYmwvYWlhL0JMMlBLSUlOVENBMDIuQU1FLkdCTF9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3J0MB0GA1UdDgQWBBSg-6hed5hnNyz0o02J9YCREXHiLTAOBgNVHQ8BAf8EBAMCBaAwggEmBgNVHR8EggEdMIIBGTCCARWgggERoIIBDYY_aHR0cDovL2NybC5taWNyb3NvZnQuY29tL3BraWluZnJhL0NSTC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMS5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMi5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMy5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsNC5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JsMBcGA1UdIAQQMA4wDAYKKwYBBAGCN3sBATAfBgNVHSMEGDAWgBTxRmjG8cPwKy19i2rhsvm-NfzRQTAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAJqTNNAFYbI8tYZvhkWYcJR1aDHuYU1URw_WgivmBHLOfIAZaztxQqvdsxn7EbAcjcOcq9H3pjUKGr3BRtnBNY431tr6872Si1uhnA9Q0oY_Loy1TELqVVHSnZv5Ak_tfVj8WfIk_tPErWJFKYSyH5rm8Oib-ESxwUgReD_HF9MnY14bWX17k0lKxbWDXBozqanPn8qTmnfF9QP-lqUSWCaCx8-p8Ko_YAwLYsD8uPcZogm5XP6QN4UM88O0WhW2SbtydDRtmuU41k0j2byj3C2lK-JwND1w0CfKV6HlCFm_yKAdbmJUK50Y8Mkh2ebZhN0HOcoGcebh1hrMvD1lL1A&s=R848IsZtrJ4URIWFCW5QPxo3KvRhDxvUblK569LAOYBUF8BTPntGlFSPdLWqTonyazVMmZ1Ha4CJfB1W6-SbDr6_sLpcW_9zKq6-7xgD1jyf-v7EtvQXfNizX-Lnd6SOL0htIQ9ucu-b4MdpB--MSXad8-d6MW-p4Bof4CvA5ZayL_81sAJ6o1v8CyX-8ADTT2zPBQf64jWAL0uEpajRjJ18DkvkPt3PFq_kkrJYfk7X3_LESbWAmj_hHgyfJeyX8PIj1MLyB2d9wDCWMikeWD6xc7sFz7nqttSmx7gOkk0V5gvuQpZ9Qmuf8T9yIzVL6_QhkKpflZ76A1cQI_7zaw&h=ONBgoPGoS3fjm4d6kKKF5GcnBLuuyuys5sxGejY0pWI"), HeaderName("x-ms-correlation-request-id"): HeaderValue("bb87c7c0-9b88-4710-9a1d-f108f2a430f9"), HeaderName("x-ms-request-id"): HeaderValue("aee34dcf-a919-447d-b19a-2c43180cef90"), HeaderName("content-length"): HeaderValue("4320"), HeaderName("x-msedge-ref"): HeaderValue("Ref A: 006D68C0A8894C3AB65249BFC23A9638 Ref B: TYO201151002009 Ref C: 2024-05-01T10:16:42Z"), HeaderName("x-ms-ratelimit-remaining-resource"): HeaderValue("Microsoft.Compute/PutVMSubscriptionMaximum;1498,Microsoft.Compute/PutVMResource;10"), HeaderName("pragma"): HeaderValue("no-cache"), HeaderName("cache-control"): HeaderValue("no-cache"), HeaderName("strict-transport-security"): HeaderValue("max-age=31536000; includeSubDomains"), HeaderName("x-ms-routing-request-id"): HeaderValue("JAPANEAST:20240501T101644Z:bb87c7c0-9b88-4710-9a1d-f108f2a430f9"), HeaderName("azure-asyncnotification"): HeaderValue("Enabled"), HeaderName("x-ms-ratelimit-remaining-subscription-writes"): HeaderValue("1199"), HeaderName("x-cache"): HeaderValue("CONFIG_NOCACHE"), HeaderName("date"): HeaderValue("Wed, 01 May 2024 10:16:43 GMT"), HeaderName("x-content-type-options"): HeaderValue("nosniff")}), body: "<BODY>" }
-[2024-05-01T10:16:44Z TRACE azure_mgmt_compute::package_2023_10_02::virtual_machines::create_or_update] current provisioning_state: Succeeded
+[2024-05-01T10:38:08Z DEBUG azure_core::http_client::reqwest] performing request PUT 'https://management.azure.com//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3?api-version=2023-09-01' with `reqwest`
+[2024-05-01T10:38:08Z DEBUG reqwest::connect] starting new connection: https://management.azure.com/
+[2024-05-01T10:38:08Z TRACE hyper_util::client::legacy::connect::http] Http::connect; scheme=Some("https"), host=Some("management.azure.com"), port=None
+[2024-05-01T10:38:08Z DEBUG hyper_util::client::legacy::connect::dns] resolving host="management.azure.com"
+[2024-05-01T10:38:08Z DEBUG hyper_util::client::legacy::connect::http] connecting to 4.150.240.10:443
+[2024-05-01T10:38:08Z DEBUG hyper_util::client::legacy::connect::http] connected to 4.150.240.10:443
+[2024-05-01T10:38:08Z TRACE hyper_util::client::legacy::client] http1 handshake complete, spawning background dispatcher task
+[2024-05-01T10:38:09Z TRACE azure_core::policies::retry_policies::retry_policy] Successful response. Request=Request { url: Url { scheme: "https", cannot_be_a_base: false, username: "", password: None, host: Some(Domain("management.azure.com")), port: None, path: "//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3", query: Some("api-version=2023-09-01"), fragment: None }, method: Put, headers: Headers({HeaderName("user-agent"): HeaderValue("azsdk-rust-mgmt_compute/0.20.0 (1.77.2; macos; aarch64)"), HeaderName("authorization"): HeaderValue("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjBjMDQxYWYtZDNlNS00MTUyLWEwMzQtZThlNDQ5YzM0YWI0LyIsImlhdCI6MTcxNDU1ODk2MiwibmJmIjoxNzE0NTU4OTYyLCJleHAiOjE3MTQ1NjMzNTQsImFjciI6IjEiLCJhaW8iOiJBUlFCNi80V0FBQUFjRml4Y1pYcUNoUVZ5ZWR6bHBCcXJkNlFkK1FQalFmSVVMcFcwWndBWS9uSTBZYm9pdWVHb3lqWTFiN1hVNWhPZ3h0VDJPTjVXVE5sY0tzMkN3NVg4K1lDaUxOVjkxei9Rek50dFR2UXlsWWkxeFh1VGdTaVR1SXBkRHJ3a2lTVWxTalNzdFJQVlE0RWgwNVRIeUNGNTBmREcyZmg2WEp3WGZEVXNOcnhScWhxRi8rQ2RnSTY4ZUdEcytFOS9CRTZQVGIrdldqL1dyampkOUZXU21GbUcyNWFoaXdLRmMxQlZGWjFobTg3czNDUVRycEc1aWtHVFd5UGFVTnBHUjVwRVFQaFVVV24vcXlZOXc0a3Ywb21wN3hoK3huMjVpMXBXcC9HTlA4TlNVQ0w3bVZRN3p0YXltSUQ3Nnd1WGI0OWxrV1F3RVpiOE9NM0F5d3U5T3lvZWZFRFpqM1JyL0xHZlhrWUJXTG5FNDQ9IiwiYWx0c2VjaWQiOiI1OjoxMDAzMjAwMjBCQUQ5QTQxIiwiYW1yIjpbInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsImZhbWlseV9uYW1lIjoiSHVhbmciLCJnaXZlbl9uYW1lIjoiUGhpbCIsImdyb3VwcyI6WyJiY2JkZWEwMy1jMmI2LTQ2ODQtYWY3Ni1iMmU0Mjk0MzlkYTkiLCJkNDlkMmFhNy1lMmZkLTQ2OTItOGViMS0xZmNiN2VkNzJiNTQiLCI2N2NmNThlMy1hMDBiLTQ2NjMtYjFhOC1kOTk4NjliMDU4MWMiXSwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjEyMi4xMTYuMzQuMTg3IiwibmFtZSI6IlBoaWwgSHVhbmciLCJvaWQiOiIzZTFiZDJhOS0zNjUyLTRlZTEtYTgxNC01NjIyMGQ3NmY0ZWQiLCJwdWlkIjoiMTAwMzIwMDJCNDE0MTc0MyIsInJoIjoiMC5BVVlBcjBIQVlPWFRVa0dnTk9qa1NjTkt0RVpJZjNrQXV0ZFB1a1Bhd2ZqMk1CT0FBR2suIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiMnphZ2tZclNMV1haUHlwOGpObHRFTnUyUVBzc0t2aGxsNENWMFp4RmRNNCIsInRpZCI6IjYwYzA0MWFmLWQzZTUtNDE1Mi1hMDM0LWU4ZTQ0OWMzNGFiNCIsInVuaXF1ZV9uYW1lIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsInV0aSI6InFQeHhPd3N0OEUyazhGR3ZqemNKQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjJiNzQ1YmRmLTA4MDMtNGQ4MC1hYTY1LTgyMmM0NDkzZGFhYyIsIjY5MDkxMjQ2LTIwZTgtNGE1Ni1hYTRkLTA2NjA3NWIyYTdhOCIsIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCIsImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2FlIjoiMSIsInhtc19jYyI6WyJDUDEiXSwieG1zX2Vkb3YiOnRydWUsInhtc190Y2R0IjoxNjg2MjM3MTE4fQ.ExtqB0shX6OyTMvdiQe4sRmt66mu4xokbZPW4CrRRWpM6zRD14UuztvLipYxGenxaOVithb5vDXfXOnqcxlbd-lseG5jlFisbbGn46Xg8sdBboRwsQfX7CbPrPqxwWKJqiWj-xOJ2-GK7tO20e4U0iTt2JUCNHylos9y5MUsAwDQJbCWRJz2SWwRDW6cYYULlx50rHkSpCfyec7VVV9SFN2Dl02yLjI0QBj1PYaNirXRmGi_VctNCR3UJfhcwzyMZaIBMVg0fXzvdXCM7K1Wy_XkeGBy0fS6dvgVBmNx_Kfr6nZXGo6rlNLJUI_fW9oNd_PewwA0ArcfxRFJOXyvrA"), HeaderName("content-type"): HeaderValue("application/json")}), body: Bytes(b"{\"location\":\"westus3\",\"properties\":{\"hardwareProfile\":{\"vmSize\":\"Standard_B1ms\"},\"storageProfile\":{\"imageReference\":{\"publisher\":\"canonical\",\"offer\":\"0001-com-ubuntu-minimal-jammy\",\"sku\":\"minimal-22_04-lts-gen2\",\"version\":\"22.04.202404100\"},\"osDisk\":{\"osType\":\"Linux\",\"name\":\"osdisk\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"FromImage\",\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"},\"dataDisks\":[{\"lun\":0,\"name\":\"datadisk1\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"Empty\",\"diskSizeGB\":10,\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"}]},\"osProfile\":{\"computerName\":\"vm-rust-lab-westus3\",\"adminUsername\":\"repairman\",\"adminPassword\":\"Y5Qq}oXdEHp*Pv:JUjYQ\",\"linuxConfiguration\":{\"disablePasswordAuthentication\":false,\"patchSettings\":{\"patchMode\":\"ImageDefault\",\"assessmentMode\":\"ImageDefault\"}}},\"networkProfile\":{\"networkApiVersion\":\"2020-11-01\",\"networkInterfaceConfigurations\":[{\"name\":\"nic1\",\"properties\":{\"primary\":true,\"deleteOption\":\"Delete\",\"enableAcceleratedNetworking\":false,\"enableIPForwarding\":true,\"dnsSettings\":{\"dnsServers\":[\"168.63.129.16\"]},\"ipConfigurations\":[{\"name\":\"ipconfig1\",\"properties\":{\"subnet\":{\"id\":\"/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm\"},\"primary\":true,\"privateIPAddressVersion\":\"IPv4\"}}],\"auxiliaryMode\":\"None\",\"auxiliarySku\":\"None\"}}]},\"timeCreated\":null},\"zones\":[\"1\"]}") } response=Response { status: Ok, headers: Headers({HeaderName("pragma"): HeaderValue("no-cache"), HeaderName("x-ms-request-id"): HeaderValue("f11aa2db-b0bb-4e48-ad5d-d196575ceaaa"), HeaderName("x-ms-correlation-request-id"): HeaderValue("ec3b1268-a619-4bba-8856-86873fe3f427"), HeaderName("x-cache"): HeaderValue("CONFIG_NOCACHE"), HeaderName("x-ms-ratelimit-remaining-resource"): HeaderValue("Microsoft.Compute/PutVMSubscriptionMaximum;1498,Microsoft.Compute/PutVMResource;10"), HeaderName("x-ms-routing-request-id"): HeaderValue("JAPANEAST:20240501T103809Z:ec3b1268-a619-4bba-8856-86873fe3f427"), HeaderName("x-msedge-ref"): HeaderValue("Ref A: F61ADABCC17249EBAE6DADF53C275485 Ref B: TYO201151002025 Ref C: 2024-05-01T10:38:08Z"), HeaderName("azure-asyncnotification"): HeaderValue("Enabled"), HeaderName("expires"): HeaderValue("-1"), HeaderName("azure-asyncoperation"): HeaderValue("https://management.azure.com/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/providers/Microsoft.Compute/locations/WestUS3/operations/f11aa2db-b0bb-4e48-ad5d-d196575ceaaa?p=5e8163ae-2ee4-432f-bc73-e4b209e5f895&api-version=2023-09-01&t=638501566898923125&c=MIIHADCCBeigAwIBAgITHgPtKFZCSVesK0WPLAAAA-0oVjANBgkqhkiG9w0BAQsFADBEMRMwEQYKCZImiZPyLGQBGRYDR0JMMRMwEQYKCZImiZPyLGQBGRYDQU1FMRgwFgYDVQQDEw9BTUUgSW5mcmEgQ0EgMDYwHhcNMjQwMjAyMTQwMTAxWhcNMjUwMTI3MTQwMTAxWjBAMT4wPAYDVQQDEzVhc3luY29wZXJhdGlvbnNpZ25pbmdjZXJ0aWZpY2F0ZS5tYW5hZ2VtZW50LmF6dXJlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK91qXSatAXLDynhJ7OmG-j0vO0hqhAjRdFNuJg9SayOMQgzA-obKyjKzODz-eKOFoz6nV1rqHbnb7YUxvz5Ke74ZDjbxdnwYGhAju6jD9ThtiS78Bt0iUKpZpY2QDYxCrpC2DaO5kCSOWUb4PBGhVDkexnKJTTgzHe6iS1gE6V9VyO5bN14Lsq_45qNHoMXlm6258OEIXZ2gvBFpy3CkYEY1Arc4oCuWYWzDTjzP7FJj-v_gVsjhKFAqVWdVND8k982bhNvxjCDqvTMMy2wR4V0GDA6ur0EnTPCKX1N3S7GUf17d1gJdpMzlb_jeHKjnYWKYv0LNyFwaqnk7GeduL0CAwEAAaOCA-0wggPpMCcGCSsGAQQBgjcVCgQaMBgwCgYIKwYBBQUHAwEwCgYIKwYBBQUHAwIwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIhpDjDYTVtHiE8Ys-hZvdFs6dEoFggvX2K4Py0SACAWQCAQowggHLBggrBgEFBQcBAQSCAb0wggG5MGMGCCsGAQUFBzAChldodHRwOi8vY3JsLm1pY3Jvc29mdC5jb20vcGtpaW5mcmEvQ2VydHMvQkwyUEtJSU5UQ0EwMi5BTUUuR0JMX0FNRSUyMEluZnJhJTIwQ0ElMjAwNi5jcnQwUwYIKwYBBQUHMAKGR2h0dHA6Ly9jcmwxLmFtZS5nYmwvYWlhL0JMMlBLSUlOVENBMDIuQU1FLkdCTF9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3J0MFMGCCsGAQUFBzAChkdodHRwOi8vY3JsMi5hbWUuZ2JsL2FpYS9CTDJQS0lJTlRDQTAyLkFNRS5HQkxfQU1FJTIwSW5mcmElMjBDQSUyMDA2LmNydDBTBggrBgEFBQcwAoZHaHR0cDovL2NybDMuYW1lLmdibC9haWEvQkwyUEtJSU5UQ0EwMi5BTUUuR0JMX0FNRSUyMEluZnJhJTIwQ0ElMjAwNi5jcnQwUwYIKwYBBQUHMAKGR2h0dHA6Ly9jcmw0LmFtZS5nYmwvYWlhL0JMMlBLSUlOVENBMDIuQU1FLkdCTF9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3J0MB0GA1UdDgQWBBSg-6hed5hnNyz0o02J9YCREXHiLTAOBgNVHQ8BAf8EBAMCBaAwggEmBgNVHR8EggEdMIIBGTCCARWgggERoIIBDYY_aHR0cDovL2NybC5taWNyb3NvZnQuY29tL3BraWluZnJhL0NSTC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMS5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMi5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsMy5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JshjFodHRwOi8vY3JsNC5hbWUuZ2JsL2NybC9BTUUlMjBJbmZyYSUyMENBJTIwMDYuY3JsMBcGA1UdIAQQMA4wDAYKKwYBBAGCN3sBATAfBgNVHSMEGDAWgBTxRmjG8cPwKy19i2rhsvm-NfzRQTAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAJqTNNAFYbI8tYZvhkWYcJR1aDHuYU1URw_WgivmBHLOfIAZaztxQqvdsxn7EbAcjcOcq9H3pjUKGr3BRtnBNY431tr6872Si1uhnA9Q0oY_Loy1TELqVVHSnZv5Ak_tfVj8WfIk_tPErWJFKYSyH5rm8Oib-ESxwUgReD_HF9MnY14bWX17k0lKxbWDXBozqanPn8qTmnfF9QP-lqUSWCaCx8-p8Ko_YAwLYsD8uPcZogm5XP6QN4UM88O0WhW2SbtydDRtmuU41k0j2byj3C2lK-JwND1w0CfKV6HlCFm_yKAdbmJUK50Y8Mkh2ebZhN0HOcoGcebh1hrMvD1lL1A&s=ArKwEZ1coOMpiHD8rkFuyqxaO006FnF9HvnbxE1enJr24zre-nFRAfjoS7Lsd84TaHEdfFd-7iMRXDr0PCh2VF7tSBx9aM-Wy13vU0C6y3kKVxD6UDhdKOfxKxTzry7if2O0D47jZgxRJd9ral3tMAacC85C0IDM3a78rs0mC1CPbZmITNBv6_fTuefZlTZCfZwZfBgmlEiZvrMVK8TqX1kqblhrcOio6blpH5o0UC8_0riZzMK21Z9UtQ_DlPtB2bY6HBvLO7BWv2ocmrDEm__u0lSjF1jeyd7LjXlOmfb0a_w9_vPHi0GTUIkPPhRmJmTSzkuehMNtQzxDi-2y7g&h=gNY-KAbxDTQpgdcq7Xjyc90wJ9PHotK0Wq-qHh8pqzk"), HeaderName("content-length"): HeaderValue("2687"), HeaderName("x-content-type-options"): HeaderValue("nosniff"), HeaderName("cache-control"): HeaderValue("no-cache"), HeaderName("date"): HeaderValue("Wed, 01 May 2024 10:38:09 GMT"), HeaderName("strict-transport-security"): HeaderValue("max-age=31536000; includeSubDomains"), HeaderName("content-type"): HeaderValue("application/json; charset=utf-8"), HeaderName("x-ms-ratelimit-remaining-subscription-writes"): HeaderValue("1199")}), body: "<BODY>" }
+[2024-05-01T10:38:09Z TRACE azure_mgmt_compute::package_2023_10_02::virtual_machines::create_or_update] current provisioning_state: Succeeded
