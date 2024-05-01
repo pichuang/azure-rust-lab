@@ -1,7 +1,14 @@
 /*
 CARGO_LOG=trace cargo run --package azure_mgmt_compute --example create_vm_20240501
 
-cargo run
+Preparation:
+- Create a resource group
+- Create a virtual network
+- Create a subnet
+- Create NAT Gateway to fix outbound traffic issue
+- Create NIC first (HARDCODE)
+
+RUST_LOG=trace cargo run
 */
 
 use azure_identity::AzureCliCredential;
