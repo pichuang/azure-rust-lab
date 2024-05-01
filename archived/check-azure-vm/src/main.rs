@@ -13,7 +13,7 @@ use std::io::Write;
 use std::process::Output;
 use reqwest::Response;
 use reqwest::Client;
-
+use reqwest::header;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -88,10 +88,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .send()
         .await?;
 
+    debug!("Headers:\n{:#?}", response.headers());
     let json_output:String = response.text().await?;
     debug!("{}", json_output);
 
+    //
     // Hard code
+    //
     // Due to the jq-rs cannot use in Macos, we use the Command to run the jq command.
     let path: &str = "/tmp/azure_vm.json";
 
@@ -122,6 +125,23 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         String::from_utf8_lossy(&vm_provisioning_state.stdout),
         String::from_utf8_lossy(&vm_time_created.stdout)
     );
+
+
+    //
+    // Check x-ms-request-id
+    // https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-ncnbi/565d1b95-30cc-4782-aae5-ba636373f8b6
+
+    // https://learn.microsoft.com/en-us/rest/api/compute/virtual-machines/get?view=rest-compute-2024-03-01&tabs=HTTP#get-a-virtual-machine.
+    GET https://management.azure.com/providers/Microsoft.Compute/operations?api-version=2024-03-01
+    let check_provisioning_url: String = format!(
+        "https://management.azure.com/subscriptions/{subscription_id}/resourceGroups/{resource_group_name}/providers/Microsoft.Compute/virtualMachines/{vm_name}?api-version={api_version}",
+        subscription_id = subscription_id,
+        resource_group_name = resource_group_name,
+        vm_name = vm_name,
+        api_version = api_version,
+    );
+
+    info!("Use Azure API URL: {}", check_provisioning_url);
 
     Ok(())
 
