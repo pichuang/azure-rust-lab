@@ -39,7 +39,7 @@ use azure_mgmt_compute::{
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     env_logger::Builder::new()
-        .filter_level(log::LevelFilter::Debug)
+        .filter_level(log::LevelFilter::Trace)
         .init();
 
     let credential = Arc::new(AzureCliCredential::new());
