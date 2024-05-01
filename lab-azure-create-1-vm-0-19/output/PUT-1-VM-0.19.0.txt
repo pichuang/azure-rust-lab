@@ -1,0 +1,49 @@
+$ RUST_LOG=trace cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.20s
+     Running `target/debug/lab-azure-create-1-vm-0-19`
+subscription_id: 0a4374d1-bc72-46f6-a4ae-a9d8401369db
+[2024-05-01T10:08:20Z DEBUG azure_core::http_client::reqwest] instantiating an http client using the reqwest backend
+[2024-05-01T10:08:21Z DEBUG azure_core::policies::transport] the following request will be passed to the transport policy: Request {
+        url: Url {
+            scheme: "https",
+            cannot_be_a_base: false,
+            username: "",
+            password: None,
+            host: Some(
+                Domain(
+                    "management.azure.com",
+                ),
+            ),
+            port: None,
+            path: "//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3",
+            query: Some(
+                "api-version=2023-09-01",
+            ),
+            fragment: None,
+        },
+        method: Put,
+        headers: Headers(
+            {
+                HeaderName(
+                    "authorization",
+                ): HeaderValue(
+                    "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCIsImtpZCI6IkwxS2ZLRklfam5YYndXYzIyeFp4dzFzVUhIMCJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjBjMDQxYWYtZDNlNS00MTUyLWEwMzQtZThlNDQ5YzM0YWI0LyIsImlhdCI6MTcxNDU1NDIzNywibmJmIjoxNzE0NTU0MjM3LCJleHAiOjE3MTQ1NTg5MzUsImFjciI6IjEiLCJhaW8iOiJBUlFCNi80V0FBQUFWeFVHcDZDaUpBVFhNWjFlZ0pJczg2ZDZqVGlOR21FdktBYkdJbEltVWQ3TnBielpLNGpQOVdLTFJZbEV3c1BNWVMxcGpmdnVOeDZHRm5TVnZjQ0RvQjVXTHAxakpPbUs4UzRscXpMajdBSDQwSitadkRFQnIrU0VsbXZrbk1JWU5SMXU1bDFkWjM2SURwK1pON0pFS0ZBbDJiYkw5bUc4Q2dvcDh3RDhmRFAzeXBKekN0aXRtSTVkL2dBamQ4VU5qVHo3KzVaY1NOVHY5NU45RDlOejQ2ZDNvVEUzT2YrbC9oYWxNMzIvazNKZUdud2lURU1zUWUwWUFDTGU1L3pSeUh0NzdKaVMydHZOSmpEdEluVnFydkJuYkJ6bVI4M3lZbDVqZS9Rb3hOR29Dd2N4S2pEMXp4WllNOFBZUExGb2pxMDRsZUNJVi9LNGZJaXM3TjJ3TzJmRUJhaUtNcERsT0JHTGxNZEZ1TWc9IiwiYWx0c2VjaWQiOiI1OjoxMDAzMjAwMjBCQUQ5QTQxIiwiYW1yIjpbInJzYSIsIm1mYSJdLCJhcHBpZCI6IjA0YjA3Nzk1LThkZGItNDYxYS1iYmVlLTAyZjllMWJmN2I0NiIsImFwcGlkYWNyIjoiMCIsImVtYWlsIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsImZhbWlseV9uYW1lIjoiSHVhbmciLCJnaXZlbl9uYW1lIjoiUGhpbCIsImdyb3VwcyI6WyJiY2JkZWEwMy1jMmI2LTQ2ODQtYWY3Ni1iMmU0Mjk0MzlkYTkiLCJkNDlkMmFhNy1lMmZkLTQ2OTItOGViMS0xZmNiN2VkNzJiNTQiLCI2N2NmNThlMy1hMDBiLTQ2NjMtYjFhOC1kOTk4NjliMDU4MWMiXSwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3LyIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjEyMi4xMTYuMzQuMTg3IiwibmFtZSI6IlBoaWwgSHVhbmciLCJvaWQiOiIzZTFiZDJhOS0zNjUyLTRlZTEtYTgxNC01NjIyMGQ3NmY0ZWQiLCJwdWlkIjoiMTAwMzIwMDJCNDE0MTc0MyIsInJoIjoiMC5BVVlBcjBIQVlPWFRVa0dnTk9qa1NjTkt0RVpJZjNrQXV0ZFB1a1Bhd2ZqMk1CT0FBR2suIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic3ViIjoiMnphZ2tZclNMV1haUHlwOGpObHRFTnUyUVBzc0t2aGxsNENWMFp4RmRNNCIsInRpZCI6IjYwYzA0MWFmLWQzZTUtNDE1Mi1hMDM0LWU4ZTQ0OWMzNGFiNCIsInVuaXF1ZV9uYW1lIjoicGluaHVhbmdAbWljcm9zb2Z0LmNvbSIsInV0aSI6IllMQVoyRVc3MlVDNGhFNmFVRXdDQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjJiNzQ1YmRmLTA4MDMtNGQ4MC1hYTY1LTgyMmM0NDkzZGFhYyIsIjY5MDkxMjQ2LTIwZTgtNGE1Ni1hYTRkLTA2NjA3NWIyYTdhOCIsIjYyZTkwMzk0LTY5ZjUtNDIzNy05MTkwLTAxMjE3NzE0NWUxMCIsImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfY2FlIjoiMSIsInhtc19jYyI6WyJDUDEiXSwieG1zX2Vkb3YiOnRydWUsInhtc190Y2R0IjoxNjg2MjM3MTE4fQ.Gs7BuhcaeNmpfnya-jyZWPYYa_ZRLH0h94JJ0wbus85fuUCAqWXD5BkIIjsHnTAHnSf3O7_oamdvc4lMOzAq_mGwZKxd0sOskROCHAJtoEex5Z533anw6f5Aq7OgTAl2u1b88rkEkouqjy0UYL8odviRGajCK-_voTl5ANDUL2sNiO2RijTsqs_VDasXiHQoBHEOibd3mQpuIakEkwULplB95pJUHX-cwglc5tvNxf2m-bONl4T_qlOzSynEgFlIScJePqCdAt6SlFCPglIvI_IZxFPdGe96KXags72L1GzSjX-J-wLarjkcnSnflHAFGJwBa1HVfcV2vCmV7Uc8nA",
+                ),
+                HeaderName(
+                    "content-type",
+                ): HeaderValue(
+                    "application/json",
+                ),
+                HeaderName(
+                    "user-agent",
+                ): HeaderValue(
+                    "azsdk-rust-mgmt_compute/0.19.0 (1.77.2; macos; aarch64)",
+                ),
+            },
+        ),
+        body: Bytes(
+            b"{\"location\":\"westus3\",\"properties\":{\"hardwareProfile\":{\"vmSize\":\"Standard_B1ms\"},\"storageProfile\":{\"imageReference\":{\"publisher\":\"canonical\",\"offer\":\"0001-com-ubuntu-minimal-jammy\",\"sku\":\"minimal-22_04-lts-gen2\",\"version\":\"22.04.202404100\"},\"osDisk\":{\"osType\":\"Linux\",\"name\":\"osdisk\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"FromImage\",\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"},\"dataDisks\":[{\"lun\":0,\"name\":\"datadisk1\",\"caching\":\"ReadWrite\",\"writeAcceleratorEnabled\":false,\"createOption\":\"Empty\",\"diskSizeGB\":10,\"managedDisk\":{\"storageAccountType\":\"Premium_LRS\"},\"deleteOption\":\"Delete\"}]},\"osProfile\":{\"computerName\":\"vm-rust-lab-westus3\",\"adminUsername\":\"repairman\",\"adminPassword\":\"Y5Qq}oXdEHp*Pv:JUjYQ\",\"linuxConfiguration\":{\"disablePasswordAuthentication\":false,\"patchSettings\":{\"patchMode\":\"ImageDefault\",\"assessmentMode\":\"ImageDefault\"}}},\"networkProfile\":{\"networkApiVersion\":\"2020-11-01\",\"networkInterfaceConfigurations\":[{\"name\":\"nic1\",\"properties\":{\"primary\":true,\"deleteOption\":\"Delete\",\"enableAcceleratedNetworking\":false,\"enableIPForwarding\":true,\"dnsSettings\":{\"dnsServers\":[\"168.63.129.16\"]},\"ipConfigurations\":[{\"name\":\"ipconfig1\",\"properties\":{\"subnet\":{\"id\":\"/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm\"},\"primary\":true,\"privateIPAddressVersion\":\"IPv4\"}}],\"auxiliaryMode\":\"None\",\"auxiliarySku\":\"None\"}}]},\"timeCreated\":null},\"zones\":[\"1\"]}",
+        ),
+    }
+[2024-05-01T10:08:21Z DEBUG azure_core::http_client::reqwest] performing request PUT 'https://management.azure.com//subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Compute/virtualMachines/vm-rust-lab-westus3?api-version=2023-09-01' with `reqwest`
+[2024-05-01T10:08:21Z DEBUG reqwest::connect] starting new connection: https://management.azure.com/
