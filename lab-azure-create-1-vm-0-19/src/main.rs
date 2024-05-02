@@ -311,6 +311,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     )
     .send();
 
+    // Get the raw response and print the header AZURE_ASYNCOPERATION
+
     let binding = _vm.await.expect("SOME THING WRONG");
     let raw_response = binding.as_raw_response();
 
