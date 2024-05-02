@@ -300,17 +300,26 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_10_02/virtual_machines/struct.Client.html#method.create_or_update
 
-    let _vms = client
-        .virtual_machines_client()
-        .create_or_update(
-            resource_group,
-            vm_name,
-            parameters_pinhuang,
-            subscription_id.unwrap(),
-        )
-        .await?;
 
-    // println!("{_vms:#?}");
+    let _vm = client
+    .virtual_machines_client()
+    .create_or_update(
+        resource_group,
+        vm_name,
+        parameters_pinhuang,
+        subscription_id.unwrap(),
+    )
+    .send();
+
+    let binding = _vm.await.expect("SOME THING WRONG");
+    let raw_response = binding.as_raw_response();
+
+    // https://docs.rs/azure_core/latest/azure_core/struct.Response.html
+    if let azure_asyncoperation = raw_response.headers().get_str(&azure_core::headers::AZURE_ASYNCOPERATION) {
+        println!("{:?}", azure_asyncoperation);
+    } else {
+        println!("No header");
+    }
 
     Ok(())
 }
