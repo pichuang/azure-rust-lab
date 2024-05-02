@@ -56,7 +56,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let vm_name = "vm-rust-lab-westus3".to_string();
     let location = "westus3".to_string();
     let subnet_id = "/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm".to_string();
-    let nic_id = "/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/networkInterfaces/nic-rust-westus3".to_string();
+    // let nic_id = "/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/networkInterfaces/nic-rust-westus3".to_string();
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.HardwareProfile.html
     let vm_hardware_profile = HardwareProfile {
@@ -132,17 +132,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     // https://docs.rs/azure_mgmt_compute/0.20.0/azure_mgmt_compute/package_2023_09_01/models/struct.NetworkInterfaceReference.html
-    let _network_interface_primary = NetworkInterfaceReference {
-        sub_resource: azure_mgmt_compute::models::SubResource {
-            id: Some(nic_id), //HARDCODE
-        },
-        // properties: Some(network_interface_reference_properties_primary),
-        // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.NetworkInterfaceReferenceProperties.html
-        properties: Some(NetworkInterfaceReferenceProperties {
-            primary: Some(true),
-            delete_option: Some(network_interface_reference_properties::DeleteOption::Delete),
-        }),
-    };
+    // let _network_interface_primary = NetworkInterfaceReference {
+    //     sub_resource: azure_mgmt_compute::models::SubResource {
+    //         id: Some(nic_id), //HARDCODE
+    //     },
+    //     // properties: Some(network_interface_reference_properties_primary),
+    //     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.NetworkInterfaceReferenceProperties.html
+    //     properties: Some(NetworkInterfaceReferenceProperties {
+    //         primary: Some(true),
+    //         delete_option: Some(network_interface_reference_properties::DeleteOption::Delete),
+    //     }),
+    // };
 
     // https://docs.rs/azure_mgmt_compute/0.20.0/azure_mgmt_compute/package_2023_09_01/models/struct.VirtualMachineNetworkInterfaceDnsSettingsConfiguration.html
     let vm_nic_dns_setting = VirtualMachineNetworkInterfaceDnsSettingsConfiguration {
@@ -285,7 +285,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         properties: Some(properties_pinhuang),
         resources: Vec::new(),
         identity: None,
-        zones: vec!["1".to_string()], //XXX
+        zones: Vec::new(),
         extended_location: None,
         managed_by: None,
         etag: None,
@@ -304,6 +304,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             subscription_id,
         )
         .send();
+        //.await?;
 
     // Get the raw response and print the header AZURE_ASYNCOPERATION
 
