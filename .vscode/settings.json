@@ -1,5 +1,7 @@
 {
     "rust-analyzer.linkedProjects": [
-        "./list-azure-vm/Cargo.toml"
+        "./lab-azure-list-vm/Cargo.toml",
+        "./lab-azure-create-1-vm/Cargo.toml",
+        "./lab-azure-create-1-vm-0-19/Cargo.toml",
     ]
 }

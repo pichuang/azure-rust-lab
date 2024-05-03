@@ -11,7 +11,7 @@ use std::sync::Arc;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let credential = Arc::new(AzureCliCredential::new());
-    let subscription_id = AzureCliCredential::get_subscription().await?;
+    let subscription_id: <<Result<String, azure_core::Error> as IntoFuture>::Output as Try>::Output = AzureCliCredential::get_subscription().await?;
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_10_02/struct.Client.html
     let client = azure_mgmt_compute::Client::builder(credential).build()?;
     let resource_group_name: String = "RG-HUB-ER-TAIWANNORTH".to_string();

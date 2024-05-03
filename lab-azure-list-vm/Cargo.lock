@@ -908,7 +908,7 @@ dependencies = [
 
 [[package]]
 name = "lab-azure-list-vm"
-version = "0.1.0"
+version = "1.0.0"
 dependencies = [
  "azure_core",
  "azure_identity",

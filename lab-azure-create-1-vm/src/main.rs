@@ -6,7 +6,6 @@ Preparation:
 - Create a virtual network
 - Create a subnet
 - Create NAT Gateway to fix outbound traffic issue
-- Create NIC first (HARDCODE)
 
 RUST_LOG=trace cargo run
 */
@@ -15,7 +14,9 @@ use azure_identity::AzureCliCredential;
 // #[warn(unused_imports)]
 // use futures::stream::StreamExt;
 use std::sync::Arc;
+use azure_core;
 
+#[warn(unused_imports)]
 use azure_mgmt_compute::{
     models::{
         hardware_profile::VmSize, linux_patch_settings, network_interface_reference_properties,
@@ -32,8 +33,10 @@ use azure_mgmt_compute::{
         VirtualMachineNetworkInterfaceIpConfiguration,
         VirtualMachineNetworkInterfaceIpConfigurationProperties, VirtualMachineProperties,
     },
-    // Client,
+    Client,
 };
+
+
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
@@ -42,31 +45,31 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .filter_level(log::LevelFilter::Trace)
         .init();
 
-    let credential = Arc::new(AzureCliCredential::new());
-    let subscription_id = AzureCliCredential::get_subscription().await?;
+    let credential: Arc<AzureCliCredential> = Arc::new(AzureCliCredential::new());
+    let subscription_id: String = AzureCliCredential::get_subscription().await?;
 
-    let client = azure_mgmt_compute::Client::builder(credential).build()?;
+    let client: Client = Client::builder(credential).build()?;
 
     // let resource_group = std::env::args().nth(1).expect("please specify resource group name");
     // let vm_name = std::env::args().nth(2).expect("please specify vm name");
     // #[warn(unused_variables)]
     // let location = std::env::args().nth(3).expect("please specify location");
 
-    let resource_group = "rg-rust-lab-westus3".to_string();
-    let vm_name = "vm-rust-lab-westus3".to_string();
-    let location = "westus3".to_string();
-    let subnet_id = "/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm".to_string();
+    let resource_group: String = "rg-rust-lab-westus3".to_string();
+    let vm_name: String = "vm-rust-lab-westus3".to_string();
+    let location: String = "westus3".to_string();
+    let subnet_id: String = "/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/virtualNetworks/vnet-rust-westus3/subnets/subnet-vm".to_string();
     // let nic_id = "/subscriptions/0a4374d1-bc72-46f6-a4ae-a9d8401369db/resourceGroups/rg-rust-lab-westus3/providers/Microsoft.Network/networkInterfaces/nic-rust-westus3".to_string();
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.HardwareProfile.html
-    let vm_hardware_profile = HardwareProfile {
+    let vm_hardware_profile: HardwareProfile = HardwareProfile {
         // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/hardware_profile/enum.VmSize.html
         vm_size: Some(VmSize::StandardB1ms),
         vm_size_properties: None,
     };
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.ImageReference.html
-    let image_reference = ImageReference {
+    let image_reference: ImageReference = ImageReference {
         sub_resource: SubResource::new(),
         publisher: Some("canonical".to_string()),
         offer: Some("0001-com-ubuntu-minimal-jammy".to_string()),
@@ -78,7 +81,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.OsDisk.html
-    let os_disk = OsDisk {
+    let os_disk: OsDisk = OsDisk {
         os_type: Some(os_disk::OsType::Linux),
         encryption_settings: None,
         name: Some("osdisk".to_string()), //TODO
@@ -100,7 +103,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.DataDisk.html
-    let data_disk_1 = DataDisk {
+    let data_disk_1: DataDisk = DataDisk {
         lun: 0,
         name: Some("datadisk1".to_string()), //TODO
         vhd: None,
@@ -124,7 +127,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.StorageProfile.html
-    let storage_profile = StorageProfile {
+    let storage_profile: StorageProfile = StorageProfile {
         image_reference: Some(image_reference),
         os_disk: Some(os_disk),
         data_disks: vec![data_disk_1],
@@ -145,30 +148,30 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // };
 
     // https://docs.rs/azure_mgmt_compute/0.20.0/azure_mgmt_compute/package_2023_09_01/models/struct.VirtualMachineNetworkInterfaceDnsSettingsConfiguration.html
-    let vm_nic_dns_setting = VirtualMachineNetworkInterfaceDnsSettingsConfiguration {
+    let vm_nic_dns_setting: VirtualMachineNetworkInterfaceDnsSettingsConfiguration = VirtualMachineNetworkInterfaceDnsSettingsConfiguration {
         dns_servers: vec!["168.63.129.16".to_string()],
     };
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.VirtualMachineNetworkInterfaceIpConfigurationProperties.html
-    let vm_nic_face_ip_configuration_propeties = VirtualMachineNetworkInterfaceIpConfigurationProperties {
+    let vm_nic_face_ip_configuration_propeties: VirtualMachineNetworkInterfaceIpConfigurationProperties = VirtualMachineNetworkInterfaceIpConfigurationProperties {
         subnet: Some(azure_mgmt_compute::models::SubResource {
             id: Some(subnet_id) //HARDCODE
         }),
         primary: Some(true),
         public_ip_address_configuration: None,
         private_ip_address_version: Some(virtual_machine_network_interface_ip_configuration_properties::PrivateIpAddressVersion::IPv4),
-        application_security_groups: Vec::new(),
-        application_gateway_backend_address_pools: Vec::new(),
-        load_balancer_backend_address_pools: Vec::new(),
+        application_security_groups: vec![],
+        application_gateway_backend_address_pools: vec![],
+        load_balancer_backend_address_pools: vec![],
     };
 
-    let vm_nic_face_ip_configuration = VirtualMachineNetworkInterfaceIpConfiguration {
+    let vm_nic_face_ip_configuration: VirtualMachineNetworkInterfaceIpConfiguration = VirtualMachineNetworkInterfaceIpConfiguration {
         name: "ipconfig1".to_string(),
         properties: Some(vm_nic_face_ip_configuration_propeties),
     };
 
     // https://docs.rs/azure_mgmt_compute/0.20.0/azure_mgmt_compute/package_2023_09_01/models/struct.VirtualMachineNetworkInterfaceConfigurationProperties.html
-    let vm_nic_configuraiton_primary = VirtualMachineNetworkInterfaceConfigurationProperties {
+    let vm_nic_configuraiton_primary: VirtualMachineNetworkInterfaceConfigurationProperties = VirtualMachineNetworkInterfaceConfigurationProperties {
         primary: Some(true),
         delete_option: Some(
             virtual_machine_network_interface_configuration_properties::DeleteOption::Delete,
@@ -189,15 +192,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         ),
     };
 
-    let network_interface_configurations_primary = VirtualMachineNetworkInterfaceConfiguration {
+    let network_interface_configurations_primary: VirtualMachineNetworkInterfaceConfiguration = VirtualMachineNetworkInterfaceConfiguration {
         name: "nic1".to_string(),
         properties: Some(vm_nic_configuraiton_primary),
     };
 
     // https://docs.rs/azure_mgmt_compute/0.20.0/azure_mgmt_compute/package_2023_09_01/models/struct.NetworkProfile.html
-    let network_profile = NetworkProfile {
+    let network_profile: NetworkProfile = NetworkProfile {
         // network_interfaces: vec![_network_interface_primary],
-        network_interfaces: Vec::new(),
+        network_interfaces: vec![],
         network_api_version: Some(NetworkApiVersion::N2020_11_01), // https://docs.rs/azure_mgmt_compute/0.20.0/azure_mgmt_compute/package_2023_09_01/models/network_profile/enum.NetworkApiVersion.html
         network_interface_configurations: vec![network_interface_configurations_primary],
     };
@@ -210,7 +213,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // };
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.LinuxConfiguration.html
-    let linux_configuration = LinuxConfiguration {
+    let linux_configuration: LinuxConfiguration = LinuxConfiguration {
         disable_password_authentication: Some(false),
         ssh: None,
         provision_vm_agent: None,
@@ -225,20 +228,20 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.OsProfile.html
-    let os_profile = OsProfile {
+    let os_profile: OsProfile = OsProfile {
         computer_name: Some(vm_name.clone()),
         admin_username: Some("repairman".to_string()),
         admin_password: Some("Y5Qq}oXdEHp*Pv:JUjYQ".to_string()),
         custom_data: None,
         windows_configuration: None,
         linux_configuration: Some(linux_configuration),
-        secrets: Vec::new(),
+        secrets: vec![],
         allow_extension_operations: None,
         require_guest_provision_signal: None,
     };
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.VirtualMachineProperties.html
-    let properties_pinhuang = VirtualMachineProperties {
+    let properties_pinhuang: VirtualMachineProperties = VirtualMachineProperties {
         hardware_profile: Some(vm_hardware_profile),
         storage_profile: Some(storage_profile),
         additional_capabilities: None,
@@ -269,7 +272,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // https://docs.rs/azure_mgmt_compute/latest/azure_mgmt_compute/package_2023_09_01/models/struct.Resource.html
     // let resource_vm = Resource::new(location);
-    let resource_vm = Resource {
+    let resource_vm: Resource = Resource {
         id: None,
         name: None,
         type_: None,
@@ -283,9 +286,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         resource: resource_vm,
         plan: None,
         properties: Some(properties_pinhuang),
-        resources: Vec::new(),
+        resources: vec![],
         identity: None,
-        zones: Vec::new(),
+        zones: vec![],
         extended_location: None,
         managed_by: None,
         etag: None,
@@ -308,15 +311,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Get the raw response and print the header AZURE_ASYNCOPERATION
 
-    let binding = _vm.await.expect("SOME THING WRONG");
-    let raw_response = binding.as_raw_response();
+    let binding: azure_mgmt_compute::virtual_machines::create_or_update::Response = _vm.await.expect("SOME THING WRONG");
+    let raw_response: &azure_core::Response = binding.as_raw_response();
 
     // https://docs.rs/azure_core/latest/azure_core/struct.Response.html
-    if let azure_asyncoperation = raw_response.headers().get_str(&azure_core::headers::AZURE_ASYNCOPERATION) {
-        println!("{:?}", azure_asyncoperation);
-    } else {
-        println!("No header");
-    }
+    let azure_asyncoperation: Result<&str, azure_core::Error> = raw_response.headers().get_str(&azure_core::headers::AZURE_ASYNCOPERATION);
+    println!("{:?}", azure_asyncoperation);
 
     Ok(())
 }
